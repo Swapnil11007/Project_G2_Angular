@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { TripsComponent } from './trips/trips.component';
-import { ToastrModule } from 'ngx-toastr';
+//import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -27,8 +27,8 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    ToastrModule
+    BrowserAnimationsModule
+    //ToastrModule
     
   ],
   providers: [],
