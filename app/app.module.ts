@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 import { NgxOtpInputModule } from 'ngx-otp-input';
+import { PackageHSComponent } from './package-hs/package-hs.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { NgxOtpInputModule } from 'ngx-otp-input';
     LoginComponent,
     ProductComponent,
     RegisterComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    PackageHSComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxOtpInputModule
+    NgxOtpInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
