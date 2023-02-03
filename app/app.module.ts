@@ -11,6 +11,8 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 import { NgxOtpInputModule } from 'ngx-otp-input';
+import { HomepageComponent } from './homepage/homepage.component';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { NgxOtpInputModule } from 'ngx-otp-input';
     LoginComponent,
     ProductComponent,
     RegisterComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    HomepageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxOtpInputModule
+    NgxOtpInputModule,
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
