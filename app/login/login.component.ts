@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserserviceService } from '../userservice.service';
+declare var jQuery:  any;
 
 @Component({
   selector: 'app-login',
@@ -9,10 +11,13 @@ export class LoginComponent implements OnInit {
 
   emailId:any;
   password:any
-
-  constructor(){
-    this.emailId='';
-    this.password='';
+  user:any;
+  confirmPassword:any;
+  constructor(private service:UserserviceService){
+     this.user= {userId:'',userName:'',emailId:'',mobileNumber:'',password:''};
+     
+    
+    // this.confirmPassword=this.confirmPassword;
 
   }
 
@@ -29,6 +34,16 @@ export class LoginComponent implements OnInit {
       alert('login Failed');
     }
 
+  }
+  register(){
+    jQuery('#myModal').modal('show');
+  }
+
+  registerUsers(){
+    
+    this.service.registerUser(this.user).subscribe((data:any)=>{console.log(data);});
+    console.log(this.user);
+    alert('User Registered');
   }
 
 }

@@ -68,4 +68,8 @@ export class ForgotPasswordComponent implements OnInit{
       alert('Both Passwords not Machting');
     }
   }
+
+  otp(){
+    alert('otp send');
+  }
 }
