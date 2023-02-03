@@ -71,5 +71,9 @@ export class ForgotPasswordComponent implements OnInit{
 
   otp(){
     alert('otp send');
+     this.display_block = document.getElementById("send_otp");
+    this.display_block.style.display = "none";
+     this.display_block = document.getElementById("validate_otp");
+     this.display_block.style.display = "block";
   }
 }
