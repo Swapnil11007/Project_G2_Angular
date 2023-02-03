@@ -15,6 +15,8 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 import { NgxOtpInputModule } from 'ngx-otp-input';
+import { HomepageComponent } from './homepage/homepage.component';
+import { NgImageSliderModule } from 'ng-image-slider';
 import { PackageHSComponent } from './package-hs/package-hs.component';
 
 import { TripsComponent } from './trips/trips.component';
@@ -27,6 +29,8 @@ import { TripsComponent } from './trips/trips.component';
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
+    HomepageComponent,
+    ForgotPasswordComponent,
     PackageHSComponent,
     TripsComponent
   ],
@@ -35,6 +39,7 @@ import { TripsComponent } from './trips/trips.component';
     AppRoutingModule,
     FormsModule,
     NgxOtpInputModule,
+    NgImageSliderModule,
     HttpClientModule
   ],
   providers: [],
