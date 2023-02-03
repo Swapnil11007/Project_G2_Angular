@@ -39,8 +39,7 @@ import { TripsComponent } from './trips/trips.component';
     AppRoutingModule,
     FormsModule,
     NgxOtpInputModule,
-    NgImageSliderModule
-    NgxOtpInputModule,
+    NgImageSliderModule,
     HttpClientModule
   ],
   providers: [],
