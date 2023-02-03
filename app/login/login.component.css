@@ -20,3 +20,13 @@
     border-bottom-right-radius: .3rem;
     }
     }
+
+table,tr{
+    padding:8px;
+}
+
+input{
+    padding:8px;
+    width: 300px;
+    border-collapse: collapse;
+}
