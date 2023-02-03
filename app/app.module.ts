@@ -1,31 +1,35 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+ 
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
-import { ProductComponent } from './product/product.component';
-import { RegisterComponent } from './register/register.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-
-import { NgxOtpInputModule } from 'ngx-otp-input';
+import { TripsComponent } from './trips/trips.component';
+import { ToastrModule } from 'ngx-toastr';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    ProductComponent,
-    RegisterComponent,
-    ForgotPasswordComponent
+    TripsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxOtpInputModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
