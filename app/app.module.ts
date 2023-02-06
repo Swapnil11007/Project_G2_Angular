@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 
-import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 import { NgxOtpInputModule } from 'ngx-otp-input';
@@ -28,10 +27,8 @@ import { FooterComponent } from './footer/footer.component';
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent,
     ForgotPasswordComponent,
     HomepageComponent,
-    ForgotPasswordComponent,
     PackageHSComponent,
     TripsComponent,
     FooterComponent

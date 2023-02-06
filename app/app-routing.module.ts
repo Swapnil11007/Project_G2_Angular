@@ -6,14 +6,12 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { PackageHSComponent } from './package-hs/package-hs.component';
-import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:"login",component:LoginComponent},
   {path:"home",component:HomepageComponent},
   {path:"",component:HomepageComponent},
-  {path:"register",component:RegisterComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"PackageHS",component:PackageHSComponent}
   
