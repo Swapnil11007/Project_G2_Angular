@@ -24,9 +24,9 @@ export class ForgotPasswordComponent implements OnInit{
     
   }
 
-  submitForm(loginForm:any){
+  submitForm(){
 
-    this.emailId = loginForm.emailId;
+    //this.emailId = loginForm.emailId;
     this.display_block = document.getElementById("send_otp");
     this.display_block.style.display = "none";
      this.display_block = document.getElementById("validate_otp");
