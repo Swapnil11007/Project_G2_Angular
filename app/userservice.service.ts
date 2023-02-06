@@ -11,4 +11,10 @@ export class UserserviceService {
   registerUser(user:any) :any{
     return this.httpClient.post('/registerUser' , user);
   }
+
+
+  getUser(user: any) {
+    return this.httpClient.get("/getUser/" + user.emailId + "/" + user.password).toPromise();
+  }
+
 }
