@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule} from '@angular/common/http';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 
 import { NgxOtpInputModule } from 'ngx-otp-input';
 import { PackageHSComponent } from './package-hs/package-hs.component';
+import { CarouselPComponent } from './carousel-p/carousel-p.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +24,16 @@ import { PackageHSComponent } from './package-hs/package-hs.component';
     ProductComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    PackageHSComponent
+    PackageHSComponent,
+    CarouselPComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgxOtpInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

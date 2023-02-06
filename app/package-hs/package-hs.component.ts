@@ -10,6 +10,18 @@ export class PackageHSComponent implements OnInit {
   cards: any;
 
   products: any;
+  public carouselPFlag:boolean=true;
+
+  images=[
+    {
+      imageSrc:'assets/Images/C1.jpg',
+      imageAlt:'unsplash2'
+    },
+    {
+      imageSrc:'assets/Images/C2.jpg',
+      imageAlt:'unsplash3'
+    }
+  ]
 
   constructor(private service:PackageService)    
   {
@@ -18,6 +30,9 @@ export class PackageHSComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getAllProducts().subscribe((data: any) => {this.products = data;});
+  }
+  carouselHome(ch:boolean){
+    this.carouselPFlag=ch;
   }
   explore(product: any){
     alert("Moved to next Page with detailed information related to trip!");
