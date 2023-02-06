@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
- 
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +12,9 @@ export class UserserviceService {
     return this.httpClient.post('/registerUser' , user);
   }
 
+
   getUser(user: any) {
     return this.httpClient.get("/getUser/" + user.emailId + "/" + user.password).toPromise();
   }
+
 }

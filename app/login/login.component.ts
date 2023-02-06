@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
- 
- 
- 
 import { UserserviceService } from '../userservice.service';
 declare var jQuery:  any;
 
@@ -27,16 +24,13 @@ export class LoginComponent implements OnInit {
 
   }
 
-
   ngOnInit(): void {
     
   }
 
-  
   async submitForm(loginForm: any) {
 
     console.log(loginForm);
-     
 
     await this.service.getUser(loginForm).then((data: any) => {this.user1 = data; console.log(data);});
     
@@ -51,12 +45,10 @@ export class LoginComponent implements OnInit {
     }
   }
  
-
   register(){
     jQuery('#myModal').modal('show');
   }
 
-   
   registerUsers(){
      
     if(this.confirmPassword==this.user.password){
@@ -66,7 +58,6 @@ export class LoginComponent implements OnInit {
       jQuery('#regfailModal').modal('show');
       alert('password should be same')
     }
-     
     
   }
 

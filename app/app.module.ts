@@ -10,15 +10,26 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
+
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
+import { NgxOtpInputModule } from 'ngx-otp-input';
+import { HomepageComponent } from './homepage/homepage.component';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { PackageHSComponent } from './package-hs/package-hs.component';
+
 import { TripsComponent } from './trips/trips.component';
-//import { ToastrModule } from 'ngx-toastr';
 import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
+    ForgotPasswordComponent,
+    HomepageComponent,
+    PackageHSComponent,
     TripsComponent,
     FooterComponent
   ],
@@ -26,10 +37,11 @@ import { FooterComponent } from './footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgxOtpInputModule,
+    NgImageSliderModule,
     HttpClientModule,
     BrowserAnimationsModule
     //ToastrModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]
