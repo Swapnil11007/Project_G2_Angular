@@ -5,8 +5,8 @@
     <div class="row">
         <div *ngFor="let card of products" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
         <br/>
-        <div class="card card-hover" >
-            <img class="card-img-top" src={{card.productPath}} alt={{card.productDescription}} style="width:100%; height:75%">
+        <div class="card card-hover" style="height: 700px;" >
+            <img class="card-img-top" src={{card.productPath}} alt={{card.productDescription}} style="width:100%; height: 400px;">
 
             <div class="card-body" style="text-align: center;">
                 <h5 class="card-title">{{card.productName}}</h5>
@@ -17,7 +17,7 @@
                 </div>
                 <h5 align="left">3N/4N/5N/7N</h5>
                 <p align="right"> 
-                    <button class="btn btn-primary" (click)='explore(card)'> Explore </button>
+                    <button style="margin-bottom: 5px;" class="btn btn-primary" (click)='explore(card)'> Explore </button>
                 </p>
             </div>
         </div>

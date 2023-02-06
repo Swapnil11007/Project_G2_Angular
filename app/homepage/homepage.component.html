@@ -14,7 +14,7 @@
                 <img class="card-img-top" src={{card.imgPath}} alt={{card.description}} style="width:100%; height:300px">
     
                 <div class="card-body" style="text-align: center;">
-                    <a href="url"><h2 class="card-title">{{card.name}}</h2></a>
+                    <nav><a class="button" routerLink={{card.route}} > <h2 class="card-title" title={{card.description}}>{{card.name}}</h2> </a></nav>
                     <p class="card-text" align="left">{{card.description}}</p>
                 </div>
             </div>
