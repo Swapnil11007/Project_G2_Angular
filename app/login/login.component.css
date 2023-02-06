@@ -29,4 +29,9 @@ input{
     padding:8px;
     width: 300px;
     border-collapse: collapse;
+
+}
+
+div{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
