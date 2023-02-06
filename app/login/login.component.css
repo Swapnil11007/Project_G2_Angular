@@ -35,3 +35,8 @@ input{
 div{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+body{
+    position: relative;
+    margin-top: 65px;
+}
