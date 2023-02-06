@@ -69,21 +69,21 @@ export class HomepageComponent implements OnInit{
         image: "assets/Images/sliders/Amarnath.jpg",
         thumbImage: "assets/Images/sliders/Amarnath.jpg",
         alt: 'Image 1',
-        title: 'Image 1'
+        title: ''
       }, {
         image: "assets/Images/sliders/Himachal.jpg",
         thumbImage: "assets/Images/sliders/Himachal.jpg",
-        title: 'Image 2',
+        title: '',
         alt: 'Image 2'
       }, {
         image: "assets/Images/sliders/Rajsthan.jpeg",
         thumbImage: "assets/Images/sliders/Rajsthan.jpeg",
-        title: 'Image 3',
+        title: '',
         alt: 'Image 3'
       }, {
         image: "assets/Images/sliders/dubai.jpg",
         thumbImage: "assets/Images/sliders/dubai.jpg",
-        title: 'Image 4',
+        title: '',
         alt: 'Image 4'
       }
   ];

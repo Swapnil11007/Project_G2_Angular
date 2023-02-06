@@ -1,3 +1,13 @@
 nav{
-    position:relative;
+    position:fixed ;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+a{
+    color: whitesmoke;
+    font: 15px Arial, sans-serif;
+}
+div{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
