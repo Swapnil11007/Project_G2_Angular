@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserserviceService } from '../userservice.service';
+declare var jQuery:  any;
 
 @Component({
   selector: 'app-login',
@@ -9,26 +11,54 @@ export class LoginComponent implements OnInit {
 
   emailId:any;
   password:any
-
-  constructor(){
-    this.emailId='';
-    this.password='';
+  user:any;
+  user1:any;
+  confirmPassword:any;
+   
+  constructor(private service:UserserviceService ){
+     this.user= {userId:'',userName:'',emailId:'',mobileNumber:'',password:''};
+     
+    
+    this.confirmPassword=this.confirmPassword;
+    this.user1={};
 
   }
-
 
   ngOnInit(): void {
     
   }
 
-  submitForm(loginForm:any){
+  async submitForm(loginForm: any) {
 
-    if(loginForm.emailId=='HR' && loginForm.password=='hr'){
-      alert('login Success');
-    }else{
-      alert('login Failed');
+    console.log(loginForm);
+
+    await this.service.getUser(loginForm).then((data: any) => {this.user1 = data; console.log(data);});
+    
+    if (this.user1 != null) {
+      jQuery('#successModal').modal('show');
+      // alert('Successfully LoggedIn...');
+       
+    } else {
+      jQuery('#failModal').modal('show');
+      // alert('Invalid Credentials!!!');
+      
     }
+  }
+ 
+  register(){
+    jQuery('#myModal').modal('show');
+  }
 
+  registerUsers(){
+     
+    if(this.confirmPassword==this.user.password){
+    this.service.registerUser(this.user).subscribe((data:any)=>{console.log(data);});
+    jQuery('#regModal').modal('show');
+    }else{
+      jQuery('#regfailModal').modal('show');
+      alert('password should be same')
+    }
+    
   }
 
 }

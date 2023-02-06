@@ -1,4 +1,9 @@
-<section class="h-100 gradient-form" >
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+ 
+<section class="h-100 gradient-form">
     <div class="container py-5 h-100" style="width: 900px;height: 300px;">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-xl-10">
@@ -8,7 +13,7 @@
                 <div class="card-body p-md-5 mx-md-4">
   
                   <div class="text-center">
-                    <img src="assets\Images\logo.png"
+                    <img src="assets\Images\logo\logo.png"
                       style="width: 185px;" alt="logo">
                     <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
                   </div>
@@ -30,12 +35,12 @@
                     <div class="text-center pt-1 mb-5 pb-1">
                       <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button" (click)="submitForm(loginForm.value)">Log
                         in</button>
-                      <a class="text-muted"  routerLink="../forgotPassword">Forgot password?</a>
+                      <a class="text-muted" routerLink="forgotPassword">Forgot password?</a>
                     </div>
   
                     <div class="d-flex align-items-center justify-content-center pb-4">
                       <p class="mb-0 me-2">Don't have an account?</p>
-                      <button type="button" class="btn btn-outline-danger" >Create new</button>
+                      <button type="button" class="btn btn-outline-danger" (click)="register()" >Create new</button>
                     </div>
                     
                   
@@ -57,3 +62,127 @@
       </div>
     </div>
   </section>
+<br><br>
+
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: rgb(150, 33, 41);color: white;">
+        <div class="modal-header">
+            <h4 class="modal-title">User Registration</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+        <div class="modal-body">
+           <table align="center">
+            <tr>
+                <input type="number" name="userId" class="form-control" [(ngModel)]="user.userId" required minlength="1" maxlength="25" #userId="ngModel" placeholder="Enter User Id in Digits">
+                <div *ngIf="userId.errors?.['required'] && userId.touched"> Please Enter Data in userId Feild</div>
+                
+            </tr>
+            <br>
+            <tr>
+                <input type="text" name="userName" class="form-control" [(ngModel)]="user.userName" required minlength="2" maxlength="18" pattern="[a-zA-Z][a-zA-Z ]+" #userName="ngModel" placeholder="Enter Your Name">
+                <div *ngIf="userName.errors?.['required']&&userName.touched">Please Enter Data in UserName field</div>
+                <div *ngIf="userName.errors?.['minlength']&&userName.touched">Please Enter at least 2 character in UserName field</div>
+                <div *ngIf="userName.errors?.['maxlength']&&userName.touched">Maximum length is 18 characters</div>
+                <div [hidden]="!userName.hasError('pattern')">Only alphabetsallowed</div>
+            </tr>
+            <br>
+            <tr>
+                <input type="email" name="emailId" class="form-control" [(ngModel)]="user.emailId" required maxlength="15" #emailId="ngModel" placeholder="Enter Your Email">
+                <div *ngIf="emailId.errors?.['required']&&emailId.touched">Please Enter Data in emailId field</div>
+                <div *ngIf="emailId.errors?.['maxlength']&&emailId.touched">Maximum length is 15 characters</div>
+            </tr>
+            <br>
+            <tr>
+                <input type="number" name="mobileNumber" class="form-control" [(ngModel)]="user.mobileNumber" required minlength="10" maxlength="10" pattern="[0-9]+" #mobileNumber="ngModel" placeholder="Enter Your Mobile Number">
+                <div *ngIf="mobileNumber.errors?.['required']&&mobileNumber.touched">Please Enter Data in mobileNumber field</div>
+                <div [hidden]="!mobileNumber.hasError('pattern')">Only numbers allowed</div>
+            </tr>
+            <br>
+            <tr>
+                <input type="password" name="password" class="form-control" [(ngModel)]="user.password" pattern="^[ A-Za-z0-9_@./#&+-]*$" placeholder="Enter Password">
+                <div [hidden]="!mobileNumber.hasError('pattern')">One number,Capital letter,small letter,special character</div>
+            </tr>
+            <br>
+            <tr>
+                <input type="password" name="confirmPassword" class="form-control" [(ngModel)]="confirmPassword" placeholder="Confirm Password">
+            </tr>
+           </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="registerUsers()">Register</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="modal fade" id="successModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: rgb(237, 231, 231);color: rgb(56, 23, 23);">
+        <div class="modal-header">
+            <h4 class="modal-title" style="color:green;">Login Success</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="failModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: rgb(237, 231, 231);color: rgb(56, 23, 23);">
+        <div class="modal-header">
+            <h4 class="modal-title" style="color:red">Login Failed due to Invalid Credentials!!!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+         
+      </div>
+      
+    </div>
+  </div>
+  
+  <div class="modal fade" id="regModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: rgb(237, 231, 231);color: rgb(56, 23, 23);">
+        <div class="modal-header">
+            <h4 class="modal-title" style="color: green;">Registration Successful</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+         
+      </div>
+      
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="regfailModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="background-color: rgb(237, 231, 231);color: rgb(56, 23, 23);">
+        <div class="modal-header">
+            <h4 class="modal-title" style="color: red;">Registration Failed</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
