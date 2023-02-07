@@ -13,6 +13,7 @@ export class PackageService {
     return this.httpClient.get('/showAllProducts');
   }
 
+
   getAllPiligrimage(): any {
     return this.httpClient.get('/showAllPiligrimages');
   }
@@ -31,4 +32,13 @@ export class PackageService {
   getAllAdventure(): any {
     return this.httpClient.get('/showAllAdventure');
   }
+
+  getAllPackageW():any{
+    return this.httpClient.get('/showAllPackageW');
+  }
+
+  getAllHoneyMoon(): any {
+    return this.httpClient.get('/showAllHoneyMoon');
+  }
+
 }

@@ -50,25 +50,25 @@ export class HomepageComponent implements OnInit{
       {
         name: 'SnowSites',
         description: 'Enjoy winter Holidays at the beatiful Snowfall locations',
-        imgPath: "assets/Images/homepage/snowfall.jpg",
         route:"snow"
       },
       {
         name: 'Honeymoon',
         description: 'Best places with special packages for the couples ',
         imgPath: "assets/Images/homepage/honeymoon.jpg",
-        route:"6"
+        route:"Honeymoon"
       },
       {
         name: 'WaterFall',
         description: 'Enjoy the camping stays near the waterfall ',
         imgPath: "assets/Images/homepage/waterfalls.jpg",
-        route:"8"
+        route:"PackageW"
       },
       {
         name: 'Adventure',
         description: 'Best and thrill making adventure locations with Dope making activities',
         imgPath: "assets/Images/homepage/adventure.jpg",
+
         route:"adventure"
       }
       
@@ -102,5 +102,9 @@ export class HomepageComponent implements OnInit{
   ngOnInit(): void {
     
   }
-
+  navigate(card:any){
+    if(card == card.name){
+      this.navigate
+    }
+  }
 }

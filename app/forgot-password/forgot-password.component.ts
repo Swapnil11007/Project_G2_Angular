@@ -1,5 +1,7 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserserviceService } from '../userservice.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -10,13 +12,10 @@ export class ForgotPasswordComponent implements OnInit{
   emailId:any;
   password:any
   display_block: any;
-  router: any;
   
-  constructor(router: Router){
+  constructor(private router: Router, private service: UserserviceService){
     this.emailId='';
     this.password='';
-    this.router = router;
-
   }
 
 
@@ -24,9 +23,13 @@ export class ForgotPasswordComponent implements OnInit{
     
   }
 
-  submitForm(loginForm:any){
+  submitForm(emailId:any){
+    console.log(emailId);
 
-    this.emailId = loginForm.emailId;
+    this.service.sendMail(emailId.emailId).subscribe((data : any) => {
+      console.log(data);
+    });
+
     this.display_block = document.getElementById("send_otp");
     this.display_block.style.display = "none";
      this.display_block = document.getElementById("validate_otp");

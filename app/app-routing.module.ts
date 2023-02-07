@@ -7,10 +7,14 @@ import { DesertComponent } from './desert/desert.component';
 
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { HoneymoonComponent } from './honeymoon/honeymoon.component';
 import { LoginComponent } from './login/login.component';
 import { PackageHSComponent } from './package-hs/package-hs.component';
+
 import { PiligrimageComponent } from './piligrimage/piligrimage.component';
 import { SnowsitesComponent } from './snowsites/snowsites.component';
+import { PackageWComponent } from './package-w/package-w.component';
+
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
@@ -22,8 +26,9 @@ const routes: Routes = [
   {path:"beach",component:BeachComponent},
   {path:"snow",component:SnowsitesComponent},
   {path:"adventure",component:AdventureComponent},
-  {path:"piligrimage",component:PiligrimageComponent}
-  
+  {path:"piligrimage",component:PiligrimageComponent},
+  {path:"PackageW",component:PackageWComponent},
+  {path:"Honeymoon",component:HoneymoonComponent}
 
 
 ];
