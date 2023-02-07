@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { UserserviceService } from '../userservice.service';
 declare var jQuery:  any;
 
@@ -19,7 +18,7 @@ export class LoginComponent implements OnInit {
    
   private baseUrl = 'http://localhost:8080/api/auth/google';
 
-  constructor(private service:UserserviceService, private http: HttpClient, private router: Router ){
+  constructor(private service:UserserviceService,private http: HttpClient){
      this.user= {userId:'',userName:'',emailId:'',mobileNumber:'',password:''};
      
     
@@ -38,15 +37,14 @@ export class LoginComponent implements OnInit {
 
     await this.service.getUser(loginForm).then((data: any) => {this.user1 = data; console.log(data);});
     
-    if (this.user1.userId == -1 ) {
+    if (this.user1 != null) {
+      jQuery('#successModal').modal('show');
+      // alert('Successfully LoggedIn...');
+       
+    } else {
       jQuery('#failModal').modal('show');
       // alert('Invalid Credentials!!!');
       
-       
-    } else {
-      jQuery('#successModal').modal('show');
-      // alert('Successfully LoggedIn...');
-      this.router.navigate(["home"]);
     }
   }
  
