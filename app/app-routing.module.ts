@@ -11,8 +11,11 @@ import { HoneymoonComponent } from './honeymoon/honeymoon.component';
 import { LoginComponent } from './login/login.component';
 import { PackageHSComponent } from './package-hs/package-hs.component';
 
+
 import { PiligrimageComponent } from './piligrimage/piligrimage.component';
 import { SnowsitesComponent } from './snowsites/snowsites.component';
+
+import { PackageJSComponent } from './package-js/package-js.component';
 import { PackageWComponent } from './package-w/package-w.component';
 
 
@@ -22,13 +25,17 @@ const routes: Routes = [
   {path:"",component:HomepageComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"PackageHS",component:PackageHSComponent},
+
   {path:"desert",component:DesertComponent},
   {path:"beach",component:BeachComponent},
   {path:"snow",component:SnowsitesComponent},
   {path:"adventure",component:AdventureComponent},
   {path:"piligrimage",component:PiligrimageComponent},
+  {path:"Honeymoon",component:HoneymoonComponent},
   {path:"PackageW",component:PackageWComponent},
-  {path:"Honeymoon",component:HoneymoonComponent}
+  {path:"JungleSafari",component:PackageJSComponent}
+  
+
 
 
 ];

@@ -1,15 +1,67 @@
 <br><br><br><br>
 <app-carousel-p [images]="images" [autoSlide]="true" [slideInterval]="7000" *ngIf="carouselPFlag" ></app-carousel-p>
+<br/>
+
+<div class="col-sm-4" *ngFor="let card of products; let i = index">
+    <div class="panel panel-warning">
+       <div class="panel-heading">
+        {{card.productName}}
+          <div class="box-header-btns pull-right">
+             <a title="Expand" type="button" data-toggle="modal" data-target=".bs-example-modal-lg">
+                 <i class="glyphicon glyphicon-resize-full"></i>
+             </a>
+          </div>
+        </div>
+        <div class="panel-body modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+            <div class="modal-dialog modal-lg" role="document">
+                 <div class="modal-content">
+                    {{card.productDescription}}
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="col-sm-4" *ngFor="let card of products; ">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel" (click)='model(card)'>{{card.productName}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="card-text" class="modal-body">
+                {{card.productDescription}}
+                <br>
+                <h5 align="left">3N/4N/5N/7N</h5>
+            </div>
+            <div class="modal-footer">
+                <div class="card-footer" align="left">
+                    <small class="text-muted">Starting at {{card.productPrice | currency:'INR'}}</small>
+                </div> 
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)='explore(card)'>Explore</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
 
 <div class="container">
     <div class="row">
         <div *ngFor="let card of products" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
         <br/>
         <div class="card card-hover" >
+
             <img class="card-img-top" src={{card.productPath}} alt={{card.productDescription}} style="width:100%; height: 300px;">
 
+
             <div class="card-body" style="text-align: center;">
-                <h5 class="card-title">{{card.productName}}</h5>
+                <h5 class="card-title" data-toggle="modal" data-target="#exampleModal">{{card.productName}}</h5>
    
                 <p class="card-text" align="left">{{card.productDescription}}</p>
                 <div class="card-footer">
@@ -20,7 +72,11 @@
                     <button class="btn btn-primary" (click)='explore(card)'> Explore </button>
                 </p>
             </div>
+        
+        
         </div>
         </div>
     </div>
 </div>
+
+
