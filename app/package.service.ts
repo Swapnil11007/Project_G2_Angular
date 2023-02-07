@@ -15,4 +15,9 @@ export class PackageService {
   getAllPackageW():any{
     return this.httpClient.get('/showAllPackageW');
   }
+
+  getAllHoneyMoon(): any {
+    return this.httpClient.get('/showAllHoneyMoon');
+  }
+
 }
