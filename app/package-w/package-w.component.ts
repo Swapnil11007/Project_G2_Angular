@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { PackageService } from '../package.service';
 
 @Component({
-  selector: 'app-package-hs',
-  templateUrl: './package-hs.component.html',
-  styleUrls: ['./package-hs.component.css']
+  selector: 'app-package-w',
+  templateUrl: './package-w.component.html',
+  styleUrls: ['./package-w.component.css']
 })
-export class PackageHSComponent implements OnInit {
+export class PackageWComponent {
   cards: any;
-
   products: any;
+
   public carouselPFlag:boolean=true;
 
   images=[
@@ -29,7 +29,7 @@ export class PackageHSComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.getAllProducts().subscribe((data: any) => {this.products = data;});
+    this.service.getAllPackageW().subscribe((data: any) => {this.products = data;});
   }
   carouselHome(ch:boolean){
     this.carouselPFlag=ch;

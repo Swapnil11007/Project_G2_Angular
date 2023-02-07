@@ -6,14 +6,16 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { PackageHSComponent } from './package-hs/package-hs.component';
+import { PackageWComponent } from './package-w/package-w.component';
 
 const routes: Routes = [
-  {path:'',component:LoginComponent},
+  {path:'',component:HomepageComponent},
   {path:"login",component:LoginComponent},
   {path:"home",component:HomepageComponent},
   {path:"",component:HomepageComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
-  {path:"PackageHS",component:PackageHSComponent}
+  {path:"PackageHS",component:PackageHSComponent},
+  {path:"PackageW",component:PackageWComponent}
   
 
 
