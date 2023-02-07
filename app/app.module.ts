@@ -22,6 +22,13 @@ import { CarouselPComponent } from './carousel-p/carousel-p.component';
 
 import { TripsComponent } from './trips/trips.component';
 import { FooterComponent } from './footer/footer.component';
+
+import { PiligrimageComponent } from './piligrimage/piligrimage.component';
+import { DesertComponent } from './desert/desert.component';
+import { BeachComponent } from './beach/beach.component';
+import { SnowsitesComponent } from './snowsites/snowsites.component';
+import { AdventureComponent } from './adventure/adventure.component';
+
 import { PackageWComponent } from './package-w/package-w.component';
 import { ToastrModule } from 'ngx-toastr';
 import { HoneymoonComponent } from './honeymoon/honeymoon.component';
@@ -38,6 +45,11 @@ import { HoneymoonComponent } from './honeymoon/honeymoon.component';
     TripsComponent,
     FooterComponent,
     CarouselPComponent,
+    PiligrimageComponent,
+    DesertComponent,
+    BeachComponent,
+    SnowsitesComponent,
+    AdventureComponent,
     PackageWComponent,
     HoneymoonComponent
   ],
