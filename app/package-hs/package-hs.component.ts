@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../package.service';
+declare var jQuery: any;
 
 @Component({
   selector: 'app-package-hs',
@@ -8,7 +9,7 @@ import { PackageService } from '../package.service';
 })
 export class PackageHSComponent implements OnInit {
   cards: any;
-
+ 
   products: any;
   public carouselPFlag:boolean=true;
 
@@ -37,4 +38,10 @@ export class PackageHSComponent implements OnInit {
   explore(product: any){
     alert("Moved to next Page with detailed information related to trip!");
   }
+  model(card:any){
+    
+    jQuery('#exampleModalLabel').modal('show');
+  }
 }
+
+

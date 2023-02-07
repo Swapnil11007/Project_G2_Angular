@@ -38,7 +38,7 @@ export class HomepageComponent implements OnInit{
         name: 'Jungle-Safari',
         description: 'Explore Indias and Africas best Forest Tourism ',
         imgPath: "assets/Images/homepage/junglesafari.jpg",
-        route:"PackageHS"
+        route:"JungleSafari"
       },
       {
         name: 'Piligrimage',

@@ -24,6 +24,7 @@ import { TripsComponent } from './trips/trips.component';
 import { FooterComponent } from './footer/footer.component';
 import { PackageWComponent } from './package-w/package-w.component';
 import { ToastrModule } from 'ngx-toastr';
+import { PackageJSComponent } from './package-js/package-js.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { ToastrModule } from 'ngx-toastr';
     TripsComponent,
     FooterComponent,
     CarouselPComponent,
-    PackageWComponent
+    PackageWComponent,
+    PackageJSComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule,
-    MatIconModule
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

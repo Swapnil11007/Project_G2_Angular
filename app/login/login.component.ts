@@ -66,7 +66,7 @@ export class LoginComponent implements OnInit {
 
   loginWithGoogle() {
     const params = new URLSearchParams();
-    params.append('client_id', 'YOUR_CLIENT_ID');
+    params.append('client_id', '583967187640-gulnhhn6l9v6td3he9vntnc6g5psqoau.apps.googleusercontent.com');
     params.append('redirect_uri', 'http://localhost:4200/callback');
     params.append('scope', 'email profile');
     params.append('response_type', 'code');

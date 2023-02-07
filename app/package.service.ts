@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PackageService {
+  
+  
 
   constructor(private httpClient: HttpClient) { 
     
@@ -14,5 +16,8 @@ export class PackageService {
   }
   getAllPackageW():any{
     return this.httpClient.get('/showAllPackageW');
+  }
+  getAllSafari(): any {
+    return this.httpClient.get('/showAllSafari');
   }
 }

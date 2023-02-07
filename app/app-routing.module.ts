@@ -6,6 +6,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
 import { PackageHSComponent } from './package-hs/package-hs.component';
+import { PackageJSComponent } from './package-js/package-js.component';
 import { PackageWComponent } from './package-w/package-w.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:"",component:HomepageComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"PackageHS",component:PackageHSComponent},
-  {path:"PackageW",component:PackageWComponent}
+  {path:"PackageW",component:PackageWComponent},
+  {path:"JungleSafari",component:PackageJSComponent}
   
 
 
