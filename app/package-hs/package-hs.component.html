@@ -56,14 +56,16 @@
         <div *ngFor="let card of products" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
         <br/>
         <div class="card card-hover" >
-            <img class="card-img-top" data-toggle="modal" data-target="#exampleModal" src={{card.productPath}} alt={{card.productDescription}} style="width:100%; height:75%">
+
+            <img class="card-img-top" src={{card.productPath}} alt={{card.productDescription}} style="width:100%; height: 300px;">
+
 
             <div class="card-body" style="text-align: center;">
                 <h5 class="card-title" data-toggle="modal" data-target="#exampleModal">{{card.productName}}</h5>
    
                 <p class="card-text" align="left">{{card.productDescription}}</p>
                 <div class="card-footer">
-                    <small class="text-muted">{{card.productPrice | currency:'INR'}}</small>
+                    <small class="text-muted">{{card.productPrice }}</small>
                 </div>
                 <h5 align="left">3N/4N/5N/7N</h5>
                 <p align="right"> 
