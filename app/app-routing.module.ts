@@ -18,6 +18,7 @@ import { PackageWComponent } from './package-w/package-w.component';
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
+  {path:'home',component:HomepageComponent},
   {path:"login",component:LoginComponent},
   {path:"",component:HomepageComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
