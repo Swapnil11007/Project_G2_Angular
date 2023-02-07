@@ -50,6 +50,7 @@ export class HomepageComponent implements OnInit{
       {
         name: 'SnowSites',
         description: 'Enjoy winter Holidays at the beatiful Snowfall locations',
+        imgPath: "assets/Images/homepage/snowfall.jpg",
         route:"snow"
       },
       {
