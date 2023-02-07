@@ -14,12 +14,16 @@ export class PackageHSComponent implements OnInit {
 
   images=[
     {
-      imageSrc:'assets/Images/C1.jpg',
+      imageSrc:'assets/Images/hillstation/slider.jpg',
       imageAlt:'unsplash2'
     },
     {
-      imageSrc:'assets/Images/C2.jpg',
+      imageSrc:'assets/Images/hillstation/slider.jpg',
       imageAlt:'unsplash3'
+    },
+    {
+      imageSrc:'assets/Images/hillstation/slider.jpg',
+      imageAlt:'unsplash1'
     }
   ]
 

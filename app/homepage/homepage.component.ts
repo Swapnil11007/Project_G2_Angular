@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -12,54 +13,63 @@ export class HomepageComponent implements OnInit{
   tours: any;
   imgCollection: ({ image: string; thumbImage: string; alt: string; title: string; } | { image: string; title: string; alt: string; thumbImage?: undefined; })[];
 
-  constructor()    
+  constructor(private router:Router)    
    {
 
     this.tours = [
       {
         name: 'HillStation',
         description: 'Hill station is a go-to destination all through the year for backpackers, Adventures and Nature lovers. And we have best hillstation packages in Incredible india',
-        imgPath: "assets/Images/homepage/hillsstation.jpg"
+        imgPath: "assets/Images/homepage/hillsstation.jpg",
+        route:"PackageHS"
       },
       {
         name: 'Beach',
         description: 'Enjoy the best blue beaches of India',
-        imgPath: "assets/Images/homepage/beach.jpg"
+        imgPath: "assets/Images/homepage/beach.jpg",
+        route:"beach"
       },
       {
         name: 'Dessert',
         description: 'Best tour to enjoy the desert safaries and cool breezes and camping ',
-        imgPath: "assets/Images/homepage/desert.jpg"
+        imgPath: "assets/Images/homepage/desert.jpg",
+        route:"desert"
       },
       {
         name: 'Jungle-Safari',
         description: 'Explore Indias and Africas best Forest Tourism ',
-        imgPath: "assets/Images/homepage/junglesafari.jpg"
+        imgPath: "assets/Images/homepage/junglesafari.jpg",
+        route:"safari"
       },
       {
         name: 'Piligrimage',
         description: 'All the devotional tours are covered with special darshan',
-        imgPath: "assets/Images/homepage/piligrimage.jpg"
+        imgPath: "assets/Images/homepage/piligrimage.jpg",
+        route:"piligrimage"
       },
       {
         name: 'SnowSites',
         description: 'Enjoy winter Holidays at the beatiful Snowfall locations',
-        imgPath: "assets/Images/homepage/snowfall.jpg"
+        imgPath: "assets/Images/homepage/snowfall.jpg",
+        route:"snow"
       },
       {
         name: 'Honeymoon',
         description: 'Best places with special packages for the couples ',
-        imgPath: "assets/Images/homepage/honeymoon.jpg"
+        imgPath: "assets/Images/homepage/honeymoon.jpg",
+        route:"6"
       },
       {
         name: 'WaterFall',
         description: 'Enjoy the camping stays near the waterfall ',
-        imgPath: "assets/Images/homepage/waterfalls.jpg"
+        imgPath: "assets/Images/homepage/waterfalls.jpg",
+        route:"8"
       },
       {
         name: 'Adventure',
         description: 'Best and thrill making adventure locations with Dope making activities',
-        imgPath: "assets/Images/homepage/adventure.jpg"
+        imgPath: "assets/Images/homepage/adventure.jpg",
+        route:"adventure"
       }
       
     ];
