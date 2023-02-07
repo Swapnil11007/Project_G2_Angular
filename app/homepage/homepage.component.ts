@@ -56,7 +56,7 @@ export class HomepageComponent implements OnInit{
         name: 'Honeymoon',
         description: 'Best places with special packages for the couples ',
         imgPath: "assets/Images/homepage/honeymoon.jpg",
-        route:"PackageHS"
+        route:"Honeymoon"
       },
       {
         name: 'WaterFall',
