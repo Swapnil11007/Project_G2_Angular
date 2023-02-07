@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage',
@@ -12,7 +13,7 @@ export class HomepageComponent implements OnInit{
   tours: any;
   imgCollection: ({ image: string; thumbImage: string; alt: string; title: string; } | { image: string; title: string; alt: string; thumbImage?: undefined; })[];
 
-  constructor()    
+  constructor(private router:Router)    
    {
 
     this.tours = [
@@ -26,31 +27,31 @@ export class HomepageComponent implements OnInit{
         name: 'Beach',
         description: 'Enjoy the best blue beaches of India',
         imgPath: "assets/Images/homepage/beach.jpg",
-        route:"PackageHS"
+        route:"beach"
       },
       {
         name: 'Dessert',
         description: 'Best tour to enjoy the desert safaries and cool breezes and camping ',
         imgPath: "assets/Images/homepage/desert.jpg",
-        route:"PackageHS"
+        route:"desert"
       },
       {
         name: 'Jungle-Safari',
         description: 'Explore Indias and Africas best Forest Tourism ',
         imgPath: "assets/Images/homepage/junglesafari.jpg",
-        route:"PackageHS"
+        route:"safari"
       },
       {
         name: 'Piligrimage',
         description: 'All the devotional tours are covered with special darshan',
         imgPath: "assets/Images/homepage/piligrimage.jpg",
-        route:"PackageHS"
+        route:"piligrimage"
       },
       {
         name: 'SnowSites',
         description: 'Enjoy winter Holidays at the beatiful Snowfall locations',
         imgPath: "assets/Images/homepage/snowfall.jpg",
-        route:"PackageHS"
+        route:"snow"
       },
       {
         name: 'Honeymoon',
@@ -68,8 +69,8 @@ export class HomepageComponent implements OnInit{
         name: 'Adventure',
         description: 'Best and thrill making adventure locations with Dope making activities',
         imgPath: "assets/Images/homepage/adventure.jpg",
-        route:"PackageHS"
-        
+
+        route:"adventure"
       }
       
     ];
