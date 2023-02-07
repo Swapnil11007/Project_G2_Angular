@@ -19,47 +19,57 @@ export class HomepageComponent implements OnInit{
       {
         name: 'HillStation',
         description: 'Hill station is a go-to destination all through the year for backpackers, Adventures and Nature lovers. And we have best hillstation packages in Incredible india',
-        imgPath: "assets/Images/homepage/hillsstation.jpg"
+        imgPath: "assets/Images/homepage/hillsstation.jpg",
+        route:"PackageHS"
       },
       {
         name: 'Beach',
         description: 'Enjoy the best blue beaches of India',
-        imgPath: "assets/Images/homepage/beach.jpg"
+        imgPath: "assets/Images/homepage/beach.jpg",
+        route:"PackageHS"
       },
       {
         name: 'Dessert',
         description: 'Best tour to enjoy the desert safaries and cool breezes and camping ',
-        imgPath: "assets/Images/homepage/desert.jpg"
+        imgPath: "assets/Images/homepage/desert.jpg",
+        route:"PackageHS"
       },
       {
         name: 'Jungle-Safari',
         description: 'Explore Indias and Africas best Forest Tourism ',
-        imgPath: "assets/Images/homepage/junglesafari.jpg"
+        imgPath: "assets/Images/homepage/junglesafari.jpg",
+        route:"PackageHS"
       },
       {
         name: 'Piligrimage',
         description: 'All the devotional tours are covered with special darshan',
-        imgPath: "assets/Images/homepage/piligrimage.jpg"
+        imgPath: "assets/Images/homepage/piligrimage.jpg",
+        route:"PackageHS"
       },
       {
         name: 'SnowSites',
         description: 'Enjoy winter Holidays at the beatiful Snowfall locations',
-        imgPath: "assets/Images/homepage/snowfall.jpg"
+        imgPath: "assets/Images/homepage/snowfall.jpg",
+        route:"PackageHS"
       },
       {
         name: 'Honeymoon',
         description: 'Best places with special packages for the couples ',
-        imgPath: "assets/Images/homepage/honeymoon.jpg"
+        imgPath: "assets/Images/homepage/honeymoon.jpg",
+        route:"Honeymoon"
       },
       {
         name: 'WaterFall',
         description: 'Enjoy the camping stays near the waterfall ',
-        imgPath: "assets/Images/homepage/waterfalls.jpg"
+        imgPath: "assets/Images/homepage/waterfalls.jpg",
+        route:"PackageW"
       },
       {
         name: 'Adventure',
         description: 'Best and thrill making adventure locations with Dope making activities',
-        imgPath: "assets/Images/homepage/adventure.jpg"
+        imgPath: "assets/Images/homepage/adventure.jpg",
+        route:"PackageHS"
+        
       }
       
     ];
@@ -92,5 +102,9 @@ export class HomepageComponent implements OnInit{
   ngOnInit(): void {
     
   }
-
+  navigate(card:any){
+    if(card == card.name){
+      this.navigate
+    }
+  }
 }

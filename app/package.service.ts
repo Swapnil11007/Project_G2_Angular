@@ -12,4 +12,12 @@ export class PackageService {
   getAllProducts(): any {
     return this.httpClient.get('/showAllProducts');
   }
+  getAllPackageW():any{
+    return this.httpClient.get('/showAllPackageW');
+  }
+
+  getAllHoneyMoon(): any {
+    return this.httpClient.get('/showAllHoneyMoon');
+  }
+
 }

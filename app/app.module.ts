@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,9 @@ import { CarouselPComponent } from './carousel-p/carousel-p.component';
 
 import { TripsComponent } from './trips/trips.component';
 import { FooterComponent } from './footer/footer.component';
+import { PackageWComponent } from './package-w/package-w.component';
+import { ToastrModule } from 'ngx-toastr';
+import { HoneymoonComponent } from './honeymoon/honeymoon.component';
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import { FooterComponent } from './footer/footer.component';
     PackageHSComponent,
     TripsComponent,
     FooterComponent,
-    CarouselPComponent
+    CarouselPComponent,
+    PackageWComponent,
+    HoneymoonComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +49,7 @@ import { FooterComponent } from './footer/footer.component';
     NgImageSliderModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    //ToastrModule
+    ToastrModule,
     MatIconModule
   ],
   providers: [],
