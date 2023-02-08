@@ -38,6 +38,7 @@ import { LogoutComponent } from './logout/logout.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,8 +59,6 @@ import { LogoutComponent } from './logout/logout.component';
     HoneymoonComponent,
     PackageJSComponent,
     LogoutComponent,
-
-
   ],
   imports: [
     BrowserModule,

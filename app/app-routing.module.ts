@@ -14,8 +14,6 @@ import { PackageHSComponent } from './package-hs/package-hs.component';
 import { PiligrimageComponent } from './piligrimage/piligrimage.component';
 import { SnowsitesComponent } from './snowsites/snowsites.component';
 import { PackageWComponent } from './package-w/package-w.component';
-import { PackageJSComponent } from './package-js/package-js.component';
-import { TripsComponent } from './trips/trips.component';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
 
@@ -33,9 +31,8 @@ const routes: Routes = [
   {path:"adventure",component:AdventureComponent},
   {path:"piligrimage",component:PiligrimageComponent},
   {path:"PackageW",component:PackageWComponent},
-  {path:"Honeymoon",component:HoneymoonComponent},
-  {path:"PackageJS",component:PackageJSComponent},
-  {path:"trips", canActivate:[AuthGuard] ,component:TripsComponent},
+  {path:"Honeymoon",component:HoneymoonComponent}
+
 
 ];
 

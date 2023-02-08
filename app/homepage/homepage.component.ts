@@ -40,6 +40,7 @@ export class HomepageComponent implements OnInit{
         description: 'Explore Indias and Africas best Forest Tourism ',
         imgPath: "../assets/Images/homepage/junglesafari.jpg",
         route:"../PackageJS"
+
       },
       {
         name: 'Piligrimage',
