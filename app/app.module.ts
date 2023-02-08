@@ -32,6 +32,8 @@ import { AdventureComponent } from './adventure/adventure.component';
 import { PackageWComponent } from './package-w/package-w.component';
 import { ToastrModule } from 'ngx-toastr';
 import { HoneymoonComponent } from './honeymoon/honeymoon.component';
+import { PackageJSComponent } from './package-js/package-js.component';
+
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import { HoneymoonComponent } from './honeymoon/honeymoon.component';
     SnowsitesComponent,
     AdventureComponent,
     PackageWComponent,
-    HoneymoonComponent
+    HoneymoonComponent,
+    PackageJSComponent
   ],
   imports: [
     BrowserModule,
