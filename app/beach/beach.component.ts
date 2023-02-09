@@ -9,7 +9,6 @@ declare var jQuery:  any;
 })
 export class BeachComponent implements OnInit {
   cards: any;
-
   products: any;
   public carouselPFlag:boolean=true;
   imgCollection: { image: string; thumbImage: string; alt: string; title: string; }[];
@@ -17,6 +16,7 @@ export class BeachComponent implements OnInit {
   recentExp2: any;
   recentExp1: any;
   QTY: any;
+  total: any;
 
 
   constructor(public service:PackageService)    
@@ -24,7 +24,9 @@ export class BeachComponent implements OnInit {
     this.recentExp={};
     this.recentExp1={};
     this.recentExp2={};
+
     this.QTY = 0;
+
     this.imgCollection = [
       {
         image: "assets/Images/sliders/beach.jpeg",
@@ -39,7 +41,9 @@ export class BeachComponent implements OnInit {
       }
 
   ];
+
 }
+
 
   ngOnInit(): void {
     this.service.getAllBeach().subscribe((data: any) => {this.products = data;});
@@ -48,15 +52,14 @@ export class BeachComponent implements OnInit {
     this.carouselPFlag=ch;
   }
   explore(product: any){
+
+    this.total = product.beachPrice * this.QTY;
     this.recentExp=product;
     jQuery('#cardModal').modal('show');
-
-
   }
   explore1(product: any){
     this.recentExp1=product;
     jQuery('#cardModal1').modal('show');
-
   }
   explore2(product: any){
     this.recentExp2=product;
