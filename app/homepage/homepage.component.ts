@@ -30,7 +30,7 @@ export class HomepageComponent implements OnInit{
         route:"beach"
       },
       {
-        name: 'Dessert',
+        name: 'Desert',
         description: 'Best tour to enjoy the desert safaries and cool breezes and camping ',
         imgPath: "assets/Images/homepage/desert.jpg",
         route:"desert"
@@ -39,7 +39,7 @@ export class HomepageComponent implements OnInit{
         name: 'Jungle-Safari',
         description: 'Explore Indias and Africas best Forest Tourism ',
         imgPath: "assets/Images/homepage/junglesafari.jpg",
-        route:"safari"
+        route:"PackageJS"
       },
       {
         name: 'Piligrimage',

@@ -18,11 +18,15 @@ export class BeachComponent implements OnInit {
   QTY: any;
   total: any;
 
+
   constructor(public service:PackageService)    
   {
     this.recentExp={};
     this.recentExp1={};
     this.recentExp2={};
+
+    this.QTY = 0;
+
     this.imgCollection = [
       {
         image: "assets/Images/sliders/beach.jpeg",
@@ -38,16 +42,8 @@ export class BeachComponent implements OnInit {
 
   ];
 
-  this.QTY = 0;
-
 }
-  // beachData: any[]=[]
-  // openDialog(card:any) {
-  //   console.log(card);
-  //   this.beachData.push(card);
-  //   this.dialog.open(DialogueComponent);
-  // }
-  
+
 
   ngOnInit(): void {
     this.service.getAllBeach().subscribe((data: any) => {this.products = data;});
@@ -56,6 +52,7 @@ export class BeachComponent implements OnInit {
     this.carouselPFlag=ch;
   }
   explore(product: any){
+
     this.total = product.beachPrice * this.QTY;
     this.recentExp=product;
     jQuery('#cardModal').modal('show');
@@ -68,4 +65,6 @@ export class BeachComponent implements OnInit {
     this.recentExp2=product;
     jQuery('#cardModal2').modal('show');
   }
+
 }
+
