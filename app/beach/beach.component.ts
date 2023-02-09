@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../package.service';
 declare var jQuery:  any;
-
-
-
+ 
 @Component({
   selector: 'app-beach',
   templateUrl: './beach.component.html',
@@ -13,6 +11,7 @@ export class BeachComponent implements OnInit {
   cards: any;
   products: any;
   public carouselPFlag:boolean=true;
+
   imgCollection: { image: string; thumbImage: string; alt: string; title: string; }[];
   recentExp: any;
   recentExp2: any;
@@ -45,14 +44,7 @@ export class BeachComponent implements OnInit {
   
 
 }
-  // beachData: any[]=[]
-  // openDialog(card:any) {
-  //   console.log(card);
-  //   this.beachData.push(card);
-  //   this.dialog.open(DialogueComponent);
-  // }
   
-
   ngOnInit(): void {
     this.service.getAllBeach().subscribe((data: any) => {this.products = data;});
   }
