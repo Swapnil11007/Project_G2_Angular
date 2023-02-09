@@ -8,19 +8,128 @@
     
     <div class="container">
         <div class="row">
-           
             <div *ngFor="let card of products" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
-                <br/>
-            <div class="card card-hover" >
-                <img class="card-img-top" src={{card.destinationPath}} alt={{card.destinationDescription}} style="width:100%; height: 300px;">
+            <br/>
+            <div class="card card-hover" title={{card.DestinationDescription}}>
+                <img class="card-img-top" src={{card.destinationPath}} alt={{card.DestinationDescription}} style="width:100%; height: 300px;">
     
                 <div class="card-body" style="text-align: center;">
-                    <h3 class="card-title" title={{card.destinationDescription}}> {{card.destinationName}}</h3>        
-                    <p align="right"> 
-                    <button class="btn btn-primary" (click)='explore(card)'> Explore </button>
-                    </p>
+                    <h2 class="card-title" >{{card.destinationName}}</h2>        
+                    <p align="left" >{{card.DestinationBrief}}</p>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button  (click)="explore(card)" type="button" class="btn btn-secondary">3N</button>
+                        <button  (click)="explore1(card)" type="button" class="btn btn-secondary">5N</button>
+                        <button  (click)="explore2(card)" type="button" class="btn btn-secondary">7N</button>
+                      </div>
                 </div>
             </div>
             </div>
         </div>
-    </div></body>
+    </div>
+    <div class="modal fade" id="cardModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content gradient-custom-2" style="color: black; box-shadow: 0 0 1px 1px rgb(255, 255, 255);" >
+            <div class="modal-header">
+                <h1 class="modal-title" style="color:black"> {{recentExp.destinationName}}</h1>                           
+            </div>
+            <div class="modal-body" >
+                <h2>Package Description</h2>
+                <p>{{recentExp.destinationAbout}}</p>
+                <h3>Rs: {{recentExp.destinationPrice}}  / Person only</h3> <br>
+                
+                <table style="width:100%">
+                  <tr>
+                    <th>Date of Journey</th>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control"></td>
+                  </tr>
+                  <tr>
+                    <th>No. Of Travellers</th>
+                    <td><input type="number" id="QTY" name="QTY" class="form-control" [(ngModel)]="QTY" min="0"  max="15"></td>
+                  </tr> 
+                  <tr>
+                    <th>Total</th>
+                    <td>Rs. {{QTY*recentExp.destinationPrice}} /-</td>
+                  </tr>
+                </table><br><br>
+
+
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary"> Add To Trips </button>          
+              </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="cardModal1" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content" style="color: black; box-shadow: 0 0 1px 1px rgb(255, 255, 255);">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:black"> {{recentExp1.destinationName}}</h4>           
+            </div>
+            <div class="modal-body">
+                <h2>Package Description</h2>
+                <p>{{recentExp1.destinationAbout1}}</p><br>
+                <h3>Rs: {{recentExp1.destinationPrice1}} / Person</h3> <br>
+                <table style="width:100%">
+                  <tr>
+                    <th>Date of Journey</th>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control"></td>
+                  </tr>
+                  <tr>
+                    <th>No. Of Travellers</th>
+                    <td><input type="number" id="QTY" name="QTY" class="form-control" [(ngModel)]="QTY" min="0"  max="15"></td>
+                  </tr> 
+                  <tr>
+                    <th>Total</th>
+                    <td>Rs. {{QTY*recentExp1.destinationPrice1}} /-</td>
+                  </tr>
+                </table><br><br>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary">  Add To Trips </button>   
+              </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="cardModal2" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content" style="color: black; box-shadow: 0 0 1px 1px rgb(255, 255, 255);">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:black"> {{recentExp2.destinationName}}</h4>                         
+            </div>
+            <div class="modal-body">
+                <h2>Package Description</h2>
+                <p>{{recentExp2.destinationAbout2}}</p><br>
+                <h3>Rs: {{recentExp2.destinationPrice2}} / Person</h3> <br>
+                <table style="width:100%">
+                  <tr>
+                    <th>Date of Journey</th>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control"></td>
+                  </tr>
+                  <tr>
+                    <th>No. Of Travellers</th>
+                    <td><input type="number" id="QTY" name="QTY" class="form-control" [(ngModel)]="QTY" min="0"  max="15"></td>
+                  </tr> 
+                  <tr>
+                    <th>Total</th>
+                    <td>Rs. {{QTY*recentExp2.destinationPrice2}} /-</td>
+                  </tr>
+                </table><br><br>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary">  Add To Trips </button>   
+              </div>
+          </div>
+          
+        </div>
+      </div>

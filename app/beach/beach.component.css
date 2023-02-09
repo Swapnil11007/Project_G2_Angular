@@ -1,11 +1,15 @@
 
 body{
-    position: relative;
-    margin-top: 65px;
+  position: relative;
+  margin-top: 65px;
 }
 
-  th, td {
-    padding: 10px;
+th, td {
+  padding: 10px;
+}
+
+div {
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-    div { font-family: Verdana, Geneva, Tahoma, sans-serif;}
+
 
