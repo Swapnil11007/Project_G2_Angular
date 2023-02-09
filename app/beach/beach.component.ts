@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../package.service';
 declare var jQuery:  any;
 
-
-
 @Component({
   selector: 'app-beach',
   templateUrl: './beach.component.html',
@@ -11,6 +9,7 @@ declare var jQuery:  any;
 })
 export class BeachComponent implements OnInit {
   cards: any;
+
   products: any;
   public carouselPFlag:boolean=true;
   imgCollection: { image: string; thumbImage: string; alt: string; title: string; }[];
@@ -40,18 +39,7 @@ export class BeachComponent implements OnInit {
       }
 
   ];
-
-
-  
-
 }
-  // beachData: any[]=[]
-  // openDialog(card:any) {
-  //   console.log(card);
-  //   this.beachData.push(card);
-  //   this.dialog.open(DialogueComponent);
-  // }
-  
 
   ngOnInit(): void {
     this.service.getAllBeach().subscribe((data: any) => {this.products = data;});
@@ -63,10 +51,12 @@ export class BeachComponent implements OnInit {
     this.recentExp=product;
     jQuery('#cardModal').modal('show');
 
+
   }
   explore1(product: any){
     this.recentExp1=product;
     jQuery('#cardModal1').modal('show');
+
   }
   explore2(product: any){
     this.recentExp2=product;
