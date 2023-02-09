@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../package.service';
 declare var jQuery:  any;
+
 @Component({
   selector: 'app-beach',
   templateUrl: './beach.component.html',
@@ -8,13 +9,22 @@ declare var jQuery:  any;
 })
 export class BeachComponent implements OnInit {
   cards: any;
-  recentExp:any;
+
   products: any;
   public carouselPFlag:boolean=true;
   imgCollection: { image: string; thumbImage: string; alt: string; title: string; }[];
+  recentExp: any;
+  recentExp2: any;
+  recentExp1: any;
+  QTY: any;
 
-  constructor(private service:PackageService)    
+
+  constructor(public service:PackageService)    
   {
+    this.recentExp={};
+    this.recentExp1={};
+    this.recentExp2={};
+    this.QTY = 0;
     this.imgCollection = [
       {
         image: "assets/Images/sliders/beach.jpeg",
@@ -27,9 +37,9 @@ export class BeachComponent implements OnInit {
         title: '',
         alt: 'Image 3'
       }
+
   ];
-  this.recentExp={};
-  }
+}
 
   ngOnInit(): void {
     this.service.getAllBeach().subscribe((data: any) => {this.products = data;});
@@ -40,7 +50,18 @@ export class BeachComponent implements OnInit {
   explore(product: any){
     this.recentExp=product;
     jQuery('#cardModal').modal('show');
-    // alert("Explore Method is not yet added!");
+
 
   }
+  explore1(product: any){
+    this.recentExp1=product;
+    jQuery('#cardModal1').modal('show');
+
+  }
+  explore2(product: any){
+    this.recentExp2=product;
+    jQuery('#cardModal2').modal('show');
+  }
+
 }
+
