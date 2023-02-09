@@ -4,6 +4,7 @@ import {MatDialog} from '@angular/material/dialog';
 declare var jQuery:  any;
 
 
+
 @Component({
   selector: 'app-beach',
   templateUrl: './beach.component.html',
@@ -41,6 +42,7 @@ export class BeachComponent implements OnInit {
 
   ];
 
+
   
 
 }
@@ -61,6 +63,7 @@ export class BeachComponent implements OnInit {
   explore(product: any){
     this.recentExp=product;
     jQuery('#cardModal').modal('show');
+
   }
   explore1(product: any){
     this.recentExp1=product;
