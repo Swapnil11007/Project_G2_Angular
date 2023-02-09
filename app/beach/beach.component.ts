@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../package.service';
-import {MatDialog} from '@angular/material/dialog';
 declare var jQuery:  any;
 
 
@@ -21,7 +20,7 @@ export class BeachComponent implements OnInit {
   QTY: any;
 
 
-  constructor(public service:PackageService , public dialog: MatDialog)    
+  constructor(public service:PackageService)    
   {
     this.recentExp={};
     this.recentExp1={};
