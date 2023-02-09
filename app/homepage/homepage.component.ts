@@ -30,7 +30,7 @@ export class HomepageComponent implements OnInit{
         route:"beach"
       },
       {
-        name: 'Dessert',
+        name: 'Desert',
         description: 'Best tour to enjoy the desert safaries and cool breezes and camping ',
         imgPath: "assets/Images/homepage/desert.jpg",
         route:"desert"

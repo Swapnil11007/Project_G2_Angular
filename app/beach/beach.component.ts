@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../package.service';
-
+declare var jQuery:  any;
 @Component({
   selector: 'app-beach',
   templateUrl: './beach.component.html',
@@ -8,7 +8,7 @@ import { PackageService } from '../package.service';
 })
 export class BeachComponent implements OnInit {
   cards: any;
-
+  recentExp:any;
   products: any;
   public carouselPFlag:boolean=true;
   imgCollection: { image: string; thumbImage: string; alt: string; title: string; }[];
@@ -28,6 +28,7 @@ export class BeachComponent implements OnInit {
         alt: 'Image 3'
       }
   ];
+  this.recentExp={};
   }
 
   ngOnInit(): void {
@@ -37,6 +38,9 @@ export class BeachComponent implements OnInit {
     this.carouselPFlag=ch;
   }
   explore(product: any){
-    alert("Explore Method is not yet added!");
+    this.recentExp=product;
+    jQuery('#cardModal').modal('show');
+    // alert("Explore Method is not yet added!");
+
   }
 }
