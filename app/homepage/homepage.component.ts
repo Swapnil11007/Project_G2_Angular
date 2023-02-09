@@ -20,57 +20,58 @@ export class HomepageComponent implements OnInit{
       {
         name: 'HillStation',
         description: 'Hill station is a go-to destination all through the year for backpackers, Adventures and Nature lovers. And we have best hillstation packages in Incredible india',
-        imgPath: "assets/Images/homepage/hillsstation.jpg",
-        route:"PackageHS"
+        imgPath: "../assets/Images/homepage/hillsstation.jpg",
+        route:"../PackageHS"
       },
       {
         name: 'Beach',
         description: 'Enjoy the best blue beaches of India',
-        imgPath: "assets/Images/homepage/beach.jpg",
-        route:"beach"
+        imgPath: "../assets/Images/homepage/beach.jpg",
+        route:"../beach"
       },
       {
         name: 'Desert',
         description: 'Best tour to enjoy the desert safaries and cool breezes and camping ',
-        imgPath: "assets/Images/homepage/desert.jpg",
-        route:"desert"
+        imgPath: "../assets/Images/homepage/desert.jpg",
+        route:"../desert"
       },
       {
         name: 'Jungle-Safari',
         description: 'Explore Indias and Africas best Forest Tourism ',
-        imgPath: "assets/Images/homepage/junglesafari.jpg",
-        route:"PackageJS"
+        imgPath: "../assets/Images/homepage/junglesafari.jpg",
+        route:"../PackageJS"
+
       },
       {
         name: 'Piligrimage',
         description: 'All the devotional tours are covered with special darshan',
-        imgPath: "assets/Images/homepage/piligrimage.jpg",
-        route:"piligrimage"
+        imgPath: "../assets/Images/homepage/piligrimage.jpg",
+        route:"../piligrimage"
       },
       {
         name: 'SnowSites',
         description: 'Enjoy winter Holidays at the beatiful Snowfall locations',
-        imgPath: "assets/Images/homepage/snowfall.jpg",
-        route:"snow"
+        imgPath: "../assets/Images/homepage/snowfall.jpg",
+        route:"../snow"
       },
       {
         name: 'Honeymoon',
         description: 'Best places with special packages for the couples ',
-        imgPath: "assets/Images/homepage/honeymoon.jpg",
-        route:"Honeymoon"
+        imgPath: "../assets/Images/homepage/honeymoon.jpg",
+        route:"../Honeymoon"
       },
       {
         name: 'WaterFall',
         description: 'Enjoy the camping stays near the waterfall ',
-        imgPath: "assets/Images/homepage/waterfalls.jpg",
-        route:"PackageW"
+        imgPath: "../assets/Images/homepage/waterfalls.jpg",
+        route:"../PackageW"
       },
       {
         name: 'Adventure',
         description: 'Best and thrill making adventure locations with Dope making activities',
-        imgPath: "assets/Images/homepage/adventure.jpg",
+        imgPath: "../assets/Images/homepage/adventure.jpg",
 
-        route:"adventure"
+        route:"../adventure"
       }
       
     ];
