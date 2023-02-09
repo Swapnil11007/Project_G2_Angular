@@ -20,4 +20,12 @@ export class UserserviceService {
     return this.httpClient.get('/sendMail/' + emailId);
   }
 
+  getOTP(): any{
+    return this.httpClient.get('/getOTP');
+  }
+
+  updatePassword(emailId: any, password: any): any{
+   this.httpClient.put('/updatePassword/' + emailId + '/' + password,null).toPromise();
+  }
+
 }

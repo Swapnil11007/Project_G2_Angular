@@ -44,9 +44,9 @@ export class LoginComponent implements OnInit {
       
        
     } else {
-      jQuery('#successModal').modal('show');
       // alert('Successfully LoggedIn...');
-      this.router.navigate(["home"]);
+      this.router.navigate(['/home']);
+     // jQuery('#successModal').modal('show');
     }
   }
  

@@ -12,10 +12,12 @@ export class ForgotPasswordComponent implements OnInit{
   emailId:any;
   password:any
   display_block: any;
+  OTP: any;
   
   constructor(private router: Router, private service: UserserviceService){
     this.emailId='';
     this.password='';
+    this.OTP= -1;
   }
 
 
@@ -28,12 +30,23 @@ export class ForgotPasswordComponent implements OnInit{
 
     this.service.sendMail(emailId.emailId).subscribe((data : any) => {
       console.log(data);
+      if(data.userId == -1){
+        this.display_block = document.getElementById("send_otp");
+        this.display_block.style.display = "block";
+        this.display_block = document.getElementById("validate_otp");
+        this.display_block.style.display = "none";
+        alert("email not registered")
+      }
+      else{
+        this.emailId = emailId.emailId;
+        this.display_block = document.getElementById("send_otp");
+        this.display_block.style.display = "none";
+        this.display_block = document.getElementById("validate_otp");
+        this.display_block.style.display = "block";
+      }
     });
 
-    this.display_block = document.getElementById("send_otp");
-    this.display_block.style.display = "none";
-     this.display_block = document.getElementById("validate_otp");
-     this.display_block.style.display = "block";
+    
     // if(loginForm.emailId=='HR' && loginForm.password=='HR'){
     //   alert('login Success');
     // }else{
@@ -42,8 +55,19 @@ export class ForgotPasswordComponent implements OnInit{
 
   }
 
+  getAndValidateOTP(validateOTPForm: any) {
+    this.service.getOTP().subscribe((data : any) => {
+      this.OTP = data;
+      console.log(data);
+      this.validateOTP(validateOTPForm);
+    });
+  }
+  
   validateOTP(validateOTPForm: any){
-    if(validateOTPForm.OTP == '123'){
+  
+    console.log("Otp given by System : " + this.OTP.value);
+    console.log("OTP input given : " + validateOTPForm.OTP);
+    if(validateOTPForm.OTP == this.OTP){
       alert('Correct OTP');
       this.display_block = document.getElementById("validate_otp");
       this.display_block.style.display = "none";
@@ -65,6 +89,10 @@ export class ForgotPasswordComponent implements OnInit{
     // alert(resetPasswordForm.password1);
     // alert(resetPasswordForm.password2);
     if(resetPasswordForm.password1 == resetPasswordForm.password2){
+
+      console.log(this.emailId, resetPasswordForm.password1);
+
+      this.service.updatePassword(this.emailId, resetPasswordForm.password1);
       alert('Reset Success');
       this.router.navigate(['../login']);
     }else{

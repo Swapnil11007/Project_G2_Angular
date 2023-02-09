@@ -15,6 +15,7 @@ import { PiligrimageComponent } from './piligrimage/piligrimage.component';
 import { SnowsitesComponent } from './snowsites/snowsites.component';
 import { PackageWComponent } from './package-w/package-w.component';
 import { PackageJSComponent } from './package-js/package-js.component';
+import { TripsComponent } from './trips/trips.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path:"piligrimage",component:PiligrimageComponent},
   {path:"PackageW",component:PackageWComponent},
   {path:"Honeymoon",component:HoneymoonComponent},
-  {path:"PackageJS",component:PackageJSComponent}
+  {path:"PackageJS",component:PackageJSComponent},
+  {path:"trips",component:TripsComponent},
 
 ];
 
