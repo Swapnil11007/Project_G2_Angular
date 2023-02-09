@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
 import { UserserviceService } from '../userservice.service';
 declare var jQuery:  any;
 
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
    
   private baseUrl = 'http://localhost:8080/api/auth/google';
 
-  constructor(private service:UserserviceService, private http: HttpClient, private router: Router ){
+  constructor(private service:UserserviceService, private http: HttpClient , private router: Router ){
      this.user= {userId:'',userName:'',emailId:'',mobileNumber:'',password:''};
      
     
@@ -44,7 +45,12 @@ export class LoginComponent implements OnInit {
       
        
     } else {
+      // console.log("Inside login user1");
+      // console.log(this.user1);
+      this.service.setUser1(this.user1);
       // alert('Successfully LoggedIn...');
+      this.service.setUserLoggedIn();
+
       this.router.navigate(['/home']);
      // jQuery('#successModal').modal('show');
     }

@@ -2,6 +2,7 @@ import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserserviceService } from '../userservice.service';
+declare var jQuery:  any;
 
 @Component({
   selector: 'app-forgot-password',
@@ -31,11 +32,8 @@ export class ForgotPasswordComponent implements OnInit{
     this.service.sendMail(emailId.emailId).subscribe((data : any) => {
       console.log(data);
       if(data.userId == -1){
-        this.display_block = document.getElementById("send_otp");
-        this.display_block.style.display = "block";
-        this.display_block = document.getElementById("validate_otp");
-        this.display_block.style.display = "none";
-        alert("email not registered")
+        //alert("email not registered");
+        jQuery('#emailNotRegistered').modal('show');
       }
       else{
         this.emailId = emailId.emailId;
@@ -46,7 +44,6 @@ export class ForgotPasswordComponent implements OnInit{
       }
     });
 
-    
     // if(loginForm.emailId=='HR' && loginForm.password=='HR'){
     //   alert('login Success');
     // }else{
@@ -65,24 +62,25 @@ export class ForgotPasswordComponent implements OnInit{
   
   validateOTP(validateOTPForm: any){
   
-    console.log("Otp given by System : " + this.OTP.value);
+    console.log("Otp given by System : " + this.OTP);
     console.log("OTP input given : " + validateOTPForm.OTP);
     if(validateOTPForm.OTP == this.OTP){
       alert('Correct OTP');
       this.display_block = document.getElementById("validate_otp");
       this.display_block.style.display = "none";
-       this.display_block = document.getElementById("reset_password");
-       this.display_block.style.display = "block";
+      this.display_block = document.getElementById("reset_password");
+      this.display_block.style.display = "block";
     }else{
-      alert('Incorrect OTp');
+      //alert('Incorrect OTP');
+      jQuery('#incorrectOTP').modal('show');
     }
   }
 
   show_forgot_password_page(){
     this.display_block = document.getElementById("validate_otp");
     this.display_block.style.display = "none";
-     this.display_block = document.getElementById("send_otp");
-     this.display_block.style.display = "block";
+    this.display_block = document.getElementById("send_otp");
+    this.display_block.style.display = "block";
   }
 
   resetPassword(resetPasswordForm: any){
@@ -96,15 +94,16 @@ export class ForgotPasswordComponent implements OnInit{
       alert('Reset Success');
       this.router.navigate(['../login']);
     }else{
-      alert('Both Passwords not Machting');
+      //alert('Both Passwords not Machting');
+      jQuery('#passwordsNotMatching').modal('show');
     }
   }
 
-  otp(){
-    alert('otp send');
-     this.display_block = document.getElementById("send_otp");
-    this.display_block.style.display = "none";
-     this.display_block = document.getElementById("validate_otp");
-     this.display_block.style.display = "block";
-  }
+  // otp(){
+  //   alert('otp send');
+  //   this.display_block = document.getElementById("send_otp");
+  //   this.display_block.style.display = "none";
+  //   this.display_block = document.getElementById("validate_otp");
+  //   this.display_block.style.display = "block";
+  // }
 }

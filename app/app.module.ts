@@ -33,6 +33,8 @@ import { PackageWComponent } from './package-w/package-w.component';
 import { ToastrModule } from 'ngx-toastr';
 import { HoneymoonComponent } from './honeymoon/honeymoon.component';
 import { PackageJSComponent } from './package-js/package-js.component';
+import { LogoutComponent } from './logout/logout.component';
+
 
 
 
@@ -54,7 +56,10 @@ import { PackageJSComponent } from './package-js/package-js.component';
     AdventureComponent,
     PackageWComponent,
     HoneymoonComponent,
-    PackageJSComponent
+    PackageJSComponent,
+    LogoutComponent,
+
+
   ],
   imports: [
     BrowserModule,

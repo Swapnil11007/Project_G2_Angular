@@ -16,13 +16,15 @@ import { SnowsitesComponent } from './snowsites/snowsites.component';
 import { PackageWComponent } from './package-w/package-w.component';
 import { PackageJSComponent } from './package-js/package-js.component';
 import { TripsComponent } from './trips/trips.component';
+import { AuthGuard } from './auth.guard';
+import { LogoutComponent } from './logout/logout.component';
 
 
 const routes: Routes = [
   {path:'',component:HomepageComponent},
   {path:'home',component:HomepageComponent},
-  {path:"login",component:LoginComponent},
-  {path:"",component:HomepageComponent},
+  {path:"login", component:LoginComponent},
+  {path:"logout",canActivate:[AuthGuard], component:LogoutComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"PackageHS",component:PackageHSComponent},
   {path:"desert",component:DesertComponent},
@@ -33,7 +35,7 @@ const routes: Routes = [
   {path:"PackageW",component:PackageWComponent},
   {path:"Honeymoon",component:HoneymoonComponent},
   {path:"PackageJS",component:PackageJSComponent},
-  {path:"trips",component:TripsComponent},
+  {path:"trips", canActivate:[AuthGuard] ,component:TripsComponent},
 
 ];
 
