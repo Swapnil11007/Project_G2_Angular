@@ -33,8 +33,9 @@ import { PackageWComponent } from './package-w/package-w.component';
 import { ToastrModule } from 'ngx-toastr';
 import { HoneymoonComponent } from './honeymoon/honeymoon.component';
 import { PackageJSComponent } from './package-js/package-js.component';
-import { LogoutComponent } from './logout/logout.component';
 
+import { LogoutComponent } from './logout/logout.component';
+import { NgxPrintModule } from 'ngx-print';
 
 
 
@@ -69,7 +70,8 @@ import { LogoutComponent } from './logout/logout.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule,
-    MatIconModule
+    MatIconModule,
+    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]
