@@ -60,19 +60,17 @@ export class BeachComponent implements OnInit {
   explore1(product: any){
     this.recentExp1=product;
     jQuery('#cardModal1').modal('show');
-  }
-
     this.total = product.beachPrice * this.QTY;
     this.recentExp=product;
-    jQuery('#cardModal').modal('show');
-  }
-  explore1(product: any){
-    this.recentExp1=product;
     jQuery('#cardModal1').modal('show');
   }
+ 
 
   explore2(product: any){
     this.recentExp2=product;
+    jQuery('#cardModal2').modal('show');
+    this.total = product.beachPrice * this.QTY;
+    this.recentExp=product;
     jQuery('#cardModal2').modal('show');
   }
 
