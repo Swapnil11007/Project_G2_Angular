@@ -16,6 +16,7 @@ import { SnowsitesComponent } from './snowsites/snowsites.component';
 import { PackageWComponent } from './package-w/package-w.component';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
+import { TripsComponent } from './trips/trips.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path:"adventure",component:AdventureComponent},
   {path:"piligrimage",component:PiligrimageComponent},
   {path:"PackageW",component:PackageWComponent},
-  {path:"Honeymoon",component:HoneymoonComponent}
+  {path:"Honeymoon",component:HoneymoonComponent},
+  {path:"trips",component:TripsComponent}
 
 
 ];
