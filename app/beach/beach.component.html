@@ -17,9 +17,11 @@
                     <h2 class="card-title" >{{card.beachName}}</h2>        
                     <p align="left" >{{card.beachBrief}}</p>
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <button mat-button (click)="explore(card)" type="button" class="btn btn-secondary">3N</button>
-                        <button mat-button (click)="explore1(card)" type="button" class="btn btn-secondary">5N</button>
-                        <button mat-button (click)="explore2(card)" type="button" class="btn btn-secondary">7N</button>
+
+                        <button  (click)="explore(card)" type="button" class="btn btn-secondary">3N</button>
+                        <button  (click)="explore1(card)" type="button" class="btn btn-secondary">5N</button>
+                        <button  (click)="explore2(card)" type="button" class="btn btn-secondary">7N</button>
+
                       </div>
                 </div>
             </div>
@@ -27,8 +29,6 @@
         </div>
     </div>
 
-
-    
     <div class="modal fade" id="cardModal" role="dialog">
         <div class="modal-dialog">
         
@@ -136,5 +136,5 @@
           
         </div>
       </div>
-
 </body>
+
