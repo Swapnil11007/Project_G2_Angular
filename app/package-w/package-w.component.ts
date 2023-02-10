@@ -3,7 +3,6 @@ import { PackageService } from '../package.service';
 import { UserserviceService } from '../userservice.service';
 declare var jQuery:  any;
 
-declare var jQuery:  any;
 @Component({
   selector: 'app-package-w',
   templateUrl: './package-w.component.html',
