@@ -35,6 +35,9 @@ import { HoneymoonComponent } from './honeymoon/honeymoon.component';
 import { PackageJSComponent } from './package-js/package-js.component';
 import { NgxPrintModule } from 'ngx-print';
 
+import { LogoutComponent } from './logout/logout.component';
+
+
 
 
 @NgModule({
@@ -55,7 +58,8 @@ import { NgxPrintModule } from 'ngx-print';
     AdventureComponent,
     PackageWComponent,
     HoneymoonComponent,
-    PackageJSComponent
+    PackageJSComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

@@ -33,6 +33,10 @@ export class PackageService {
     return this.httpClient.get('/showAllAdventure');
   }
 
+  getAllHillStation():any {
+    return this.httpClient.get('/showAllProducts');
+  }
+
   getAllPackageW():any{
     return this.httpClient.get('/showAllWaterfall');
   }
