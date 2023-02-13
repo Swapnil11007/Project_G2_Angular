@@ -10,8 +10,8 @@
         <div class="row">
             <div *ngFor="let card of products" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
             <br/>
-            <div class="card card-hover" title={{card.DestinationDescription}}>
-                <img class="card-img-top" src={{card.destinationPath}} alt={{card.DestinationDescription}} style="width:100%; height: 300px;">
+            <div class="card card-hover" title={{card.destinationDescription}}>
+                <img class="card-img-top" src={{card.destinationPath}} alt={{card.destinationDescription}} style="width:100%; height: 300px;">
     
                 <div class="card-body" style="text-align: center;">
                     <h2 class="card-title" >{{card.destinationName}}</h2>        
@@ -133,3 +133,4 @@
           
         </div>
       </div>
+</body>
