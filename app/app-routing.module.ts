@@ -42,6 +42,7 @@ const routes: Routes = [
   {path:"Bookings",component:BookingComponent}
 
 
+
 ];
 
 @NgModule({  
