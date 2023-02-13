@@ -36,8 +36,8 @@ import { PackageJSComponent } from './package-js/package-js.component';
 import { NgxPrintModule } from 'ngx-print';
 
 import { LogoutComponent } from './logout/logout.component';
-import { SocialLoginModule } from 'angularx-social-login/sociallogin.module';
-import { SocialAuthServiceConfig } from 'angularx-social-login/socialauth.service';
+import { SocialLoginModule } from 'angularx-social-login';
+import { SocialAuthServiceConfig } from 'angularx-social-login';
 import { GoogleLoginProvider } from 'angularx-social-login';
 
 
