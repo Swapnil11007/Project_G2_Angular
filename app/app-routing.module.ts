@@ -33,7 +33,7 @@ const routes: Routes = [
   {path:"piligrimage",component:PiligrimageComponent},
   {path:"PackageW",component:PackageWComponent},
   {path:"Honeymoon",component:HoneymoonComponent},
-  {path:"trips",component:TripsComponent}
+  {path:"trips",component:TripsComponent},
 
 
 ];
