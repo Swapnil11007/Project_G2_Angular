@@ -8,6 +8,7 @@ export class PackageService {
 
   constructor(private httpClient: HttpClient) {     
   }
+
   getAllPiligrimage(): any {
     return this.httpClient.get('/showAllPiligrimages');
   }

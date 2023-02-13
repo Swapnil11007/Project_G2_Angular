@@ -1,48 +1,49 @@
 
 <body>
-<form >
-  <div class="border" *ngFor="let t of trips" id="print-section">
-    <div id="results" style="width: 560px;">
-      <div class="form-group row">
-          <div class="col-sm-10">
-            <img src={{t.imgPath}} style="width: 300px;height:300px;">
+  <form >
+    <div class="border" *ngFor="let t of trips" id="print-section">
+      <div id="results" style="width: 560px;">
+        <div class="form-group row">
+            <div class="col-sm-10">
+              <img src={{t.imgPath}} style="width: 300px;height:300px;">
+            </div>
           </div>
-        </div>
-        <div class="relative1">
-          <h4 class="relative1">Description</h4>
           <div class="relative1">
-            <p class="relative1" style="width: 400px;">{{t.description }} </p>
+            <h4 class="relative1">Description</h4>
+            <div class="relative1">
+              <p class="relative1" style="width: 400px;">{{t.description }} </p>
+            </div>
           </div>
+      </div>
+    <div id="search" style="width: 560px;">
+    <div class="form-group row">
+        <label for="prodName" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Package</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.prodName}}">
         </div>
-    </div>
-  <div id="search" style="width: 560px;">
-  <div class="form-group row">
-      <label for="prodName" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Package</label>
-      <div class="col-sm-10">
-        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.prodName}}">
+      </div>
+      <div class="form-group row">
+        <label for="travelDate" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Travel&nbsp;Date</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ t.travelDate | date:'dd-MMM-yyyy'}} ">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="quantity" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Travellers</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.quantity}}">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="totalAmount" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Total</label>
+        <div class="col-sm-10">
+          <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.totalAmount}}">
+        </div>
+      </div>
+      &nbsp;&nbsp;&nbsp;<button class="btn btn-success" style="width: 100px;" (click)="placeTrip(t)">CancelTrip</button>&nbsp;&nbsp;&nbsp;
+      <button class="btn btn-info" style="width: 100px;" printSectionId="print-section" ngxPrint (click)="print(t)">Print Details</button>
       </div>
     </div>
-    <div class="form-group row">
-      <label for="travelDate" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Travel&nbsp;Date</label>
-      <div class="col-sm-10">
-        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ t.travelDate | date:'dd-MMM-yyyy'}} ">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="quantity" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Travellers</label>
-      <div class="col-sm-10">
-        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.quantity}}">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label for="totalAmount" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Total</label>
-      <div class="col-sm-10">
-        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.totalAmount}}">
-      </div>
-    </div>
-    &nbsp;&nbsp;&nbsp;<button class="btn btn-success" style="width: 100px;" (click)="placeTrip(t)">CancelTrip</button>&nbsp;&nbsp;&nbsp;
-    <button class="btn btn-info" style="width: 100px;" printSectionId="print-section" ngxPrint (click)="print(t)">Print Details</button>
-    </div>
-  </div>
-</form>
-</body>
+  </form>
+  </body>
+  

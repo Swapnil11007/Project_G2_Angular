@@ -28,5 +28,9 @@ export class BookingComponent implements OnInit{
     this.service.setPlaceHolder(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(product.prodName + " Opted for Cancellation");
   }
-  print(t:any){}
+  print(product:any){
+    this.cart={prodName:product.prodName , emailID:this.userService.getEmail() , imgPath:product.imgPath ,travelDate:product.travelDate, quantity:product.quantity, totalAmount:product.totalAmount,description:product.description};
+    this.service.setPlaceHolder(this.cart).subscribe((data:any)=>{console.log('trip added');});
+
+  }
 }

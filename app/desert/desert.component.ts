@@ -75,6 +75,7 @@ export class DesertComponent implements OnInit {
     
   }
   Addtrips2(product: any){
+
     this.cart={prodName:product.desertName , emailID:this.userservice.getEmail() , imgPath:product.desertPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.desertPrice2), description:product.desertAbout2};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");

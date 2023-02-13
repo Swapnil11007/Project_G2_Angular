@@ -11,6 +11,7 @@ display: inline-block;
 width: 300px;
 height: 350px;
 left: 5px;
+margin: 10px auto;
 /* overflow: auto; */
 /* -moz-box-shadow: #555 0 0 8px;
 -webkit-box-shadow: #555 0 0 8px;
@@ -23,6 +24,8 @@ display: inline-block;
 width: 300px;
 height: 350px;
 left: 5px;
+margin: 10px auto;
+
 /* overflow: auto; */
 /* -moz-box-shadow: #555 0 0 8px;
 -webkit-box-shadow: #555 0 0 8px;

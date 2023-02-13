@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../package.service';
 import { UserserviceService } from '../userservice.service';
 
@@ -7,7 +7,7 @@ import { UserserviceService } from '../userservice.service';
   templateUrl: './ticketplaceholder.component.html',
   styleUrls: ['./ticketplaceholder.component.css']
 })
-export class TicketplaceholderComponent {
+export class TicketplaceholderComponent implements OnInit{
 
   trips: any;
   visible:any;
@@ -15,6 +15,10 @@ export class TicketplaceholderComponent {
   doj: any;
   QTY: any;
   mailID:any;
+
+  ngOnInit(): void {
+    
+  }
 
   constructor(protected service: PackageService, private userService: UserserviceService){
     this.service.getPlaceHolder().subscribe((data: any) => {
@@ -26,12 +30,7 @@ export class TicketplaceholderComponent {
     this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " ,description:" " };
   }
   
-  ngOnInit(): void {
-    // this.service.getTicketByEmailId(this.userService.getEmail()).subscribe((data: any) => {
-    //   this.trips = data;
-    //   console.log(data);
-    // });
-  }
+
   deletePlaceHolder(product:any){
     this.service.deletePlaceHolder(product.emailID , product.prodName).subscribe((data:any) => {console.log('Trip Deleted');});
     const i = this.trips.findIndex((element: any) => {
@@ -51,5 +50,8 @@ export class TicketplaceholderComponent {
     });
     this.trips.splice(i, 1);
    
-  }
+
+}
+
+
 }

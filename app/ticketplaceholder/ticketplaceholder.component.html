@@ -5,24 +5,9 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<!-- <table *ngIf="trips.length" class="table table-bordered table-hover table-striped table-sm text-center" id="print-section">
-    <thead><tr class="bg-info text-white">
-        <th><h4>Package</h4></th>
-        <th><h4>Date of Journey</h4></th>
-        <th><h4>Number of Travellers</h4></th>
-        <th><h4>Total Amount</h4></th>
-        <th><h4>Package Name</h4></th>
-        <th><h4>Delete</h4></th>
-    </tr></thead>
-    <tbody><tr *ngFor="let t of trips">
-        <td><img class="card-img-top" src={{t.imgPath}} style="width: 100px; height: 100px;">  </td>
-        <td><h5>{{t.travelDate}}</h5></td>
-        <td><h5>{{t.quantity}}</h5></td>
-        <td><h5>{{t.totalAmount}}</h5></td> 
-        <td><h5>{{t.prodName}}</h5></td>
-        <td *ngIf="visible" style="visibility: visible;"><button class="btn btn-danger" (click)="deleteTrip(t)"><span class="glyphicon glyphicon-trash" style="width: 20px ; height: 20px;"></span></button></td>
-    </tr></tbody>
-</table> -->
+
+<h2 align="center" style="color: #E53A24;">Open Tickects</h2>
+
 <form *ngIf="trips.length" id="print-section">
     <div class="border" *ngFor="let t of trips">
         <div id="results" style="width: 560px;">
@@ -35,9 +20,9 @@
                 <h4 class="relative1">Description</h4>
                 <div class="relative1">
                   <p class="relative1" style="width: 400px;">{{t.description }} </p>
+                </div>                  
                 </div>
               </div>
-          </div>
     <div id="search" style="width: 560px;">
     <div class="form-group row">
         <label for="prodName" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Package</label>
@@ -65,8 +50,7 @@
       </div>
       <button class="btn btn-success" *ngIf="t.emailID!=mailID" style="visibility: visible;"  (click)="buyNow(t)">BuyNow</button>
       <button class="btn btn-danger" *ngIf="t.emailID===mailID" style="visibility: visible;"  (click)="deletePlaceHolder(t)">Cancel</button>
-      </div>
-    </div>
+      </div></div>
 </form>
 <!-- <div align="right"><button class="btn btn-success" printSectionId="print-section" ngxPrint>CHECKOUT</button></div> -->
 </body>
