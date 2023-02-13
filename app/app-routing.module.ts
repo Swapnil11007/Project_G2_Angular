@@ -41,6 +41,7 @@ const routes: Routes = [
   {path:"ticketplacer",component:TicketplaceholderComponent},
   {path:"Bookings",component:BookingComponent}
 
+
 ];
 
 @NgModule({  
