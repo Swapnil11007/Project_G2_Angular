@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../package.service';
+import { UserserviceService } from '../userservice.service';
 declare var jQuery:  any;
 @Component({
   selector: 'app-adventure',
@@ -16,12 +17,15 @@ export class AdventureComponent implements OnInit {
   recentExp1: any;
   recentExp2: any;
   QTY: number;
-
-  constructor(private service:PackageService)    
+  cart: any;
+  doj: any;
+  doj1: any;
+  constructor(private service:PackageService, public userservice:UserserviceService)    
   {
     this.recentExp={};
     this.recentExp1={};
     this.QTY = 0;
+    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " };
     this.imgCollection = [
       {
         image: "assets/Images/adventure/slider1.jpg",
@@ -55,5 +59,17 @@ export class AdventureComponent implements OnInit {
   explore1(product: any){
     this.recentExp1=product;
     jQuery('#cardModal1').modal('show');
+  }
+
+  Addtrips(product: any){
+    this.cart={prodName:product.adventureName , emailID:this.userservice.getEmail() , imgPath:product.adventurePath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.adventurePrice)};
+    this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
+    alert(this.cart.prodName+" Added to Cart");
+  }
+  Addtrips1(product: any){
+    this.cart={prodName:product.adventureName , emailID:this.userservice.getEmail() , imgPath:product.adventurePath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.adventurePrice1)};
+    this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
+    alert(this.cart.prodName+" Added to Cart");
+    
   }
 }
