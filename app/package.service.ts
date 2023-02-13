@@ -38,7 +38,7 @@ export class PackageService {
   }
 
   getAllPackageW():any{
-    return this.httpClient.get('/showAllPackageW');
+    return this.httpClient.get('/showAllWaterfall');
   }
 
   getAllHoneyMoon(): any {

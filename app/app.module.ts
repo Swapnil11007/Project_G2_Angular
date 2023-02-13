@@ -36,6 +36,9 @@ import { PackageJSComponent } from './package-js/package-js.component';
 import { NgxPrintModule } from 'ngx-print';
 
 import { LogoutComponent } from './logout/logout.component';
+import { SocialLoginModule } from 'angularx-social-login';
+import { SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 
 
 
@@ -71,9 +74,23 @@ import { LogoutComponent } from './logout/logout.component';
     BrowserAnimationsModule,
     ToastrModule,
     MatIconModule,
-    NgxPrintModule
+    NgxPrintModule,
+    SocialLoginModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('305164231371-tsms046vup1o6hop40528f37a9ivbffr.apps.googleusercontent.com'),
+          },
+        ],
+      }  as SocialAuthServiceConfig,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
