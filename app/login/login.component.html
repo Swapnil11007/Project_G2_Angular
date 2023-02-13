@@ -83,11 +83,11 @@
           </div>
           <div class="modal-body">
             <table align="center">
-              <tr>
+              <!-- <tr>
                   <input type="number" name="userId" class="form-control" [(ngModel)]="user.userId" required minlength="1" maxlength="25" #userId="ngModel" placeholder="Enter User Id in Digits">
                   <div *ngIf="userId.errors?.['required'] && userId.touched"> Please Enter Data in userId Feild</div>
                   
-              </tr>
+              </tr> -->
               <br>
               <tr>
                   <input type="text" name="userName" class="form-control" [(ngModel)]="user.userName" required minlength="2" maxlength="18" pattern="[a-zA-Z][a-zA-Z ]+" #userName="ngModel" placeholder="Enter Your Name">
@@ -102,6 +102,12 @@
                   <div *ngIf="emailId.errors?.['required']&&emailId.touched">Please Enter Data in emailId field</div>
                   <div *ngIf="emailId.errors?.['maxlength']&&emailId.touched">Maximum length is 15 characters</div>
               </tr>
+              <!-- validate email -->
+              <!-- <tr>
+                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="registerUsers()">Send OTP</button>
+                <input type="text" name="emailId" style="width: 200px;height: 20px;" [(ngModel)]="user.emailId" required maxlength="15" #emailId="ngModel" placeholder="Enter OTP">
+                <button type="button" class="btn btn-default" data-dismiss="modal" (click)="registerUsers()">Validate</button>
+              </tr> -->
               <br>
               <tr>
                   <input type="number" name="mobileNumber" class="form-control" [(ngModel)]="user.mobileNumber" required minlength="10" maxlength="10" pattern="[0-9]+" #mobileNumber="ngModel" placeholder="Enter Your Mobile Number">

@@ -17,10 +17,13 @@
           <a class="nav-link active" routerLink="home">Home</a>
         </li>      
         <li class="nav-item">
-          <a class="nav-link"  [class.disabled]="!loginStatus" routerLink="trips" >Trips</a>
+          <a class="nav-link"  [class.disabled]="!loginStatus" routerLink="trips" >Fav Trips</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  [class.disabled]="!loginStatus"  routerLink="trips">My Trips</a>
+          <a class="nav-link"  [class.disabled]="!loginStatus" routerLink="Bookings" >MyBookings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  [class.disabled]="!loginStatus"  routerLink="ticketplacer">Open To Cancellation</a>
         </li>
          
       </ul>
@@ -34,7 +37,7 @@
     <div class="collapse dropdown">
       <button class="dropbtn" *ngIf="service.getUserLogged()"  style="border: 2px solid rgb(255, 255, 255); border-radius: 20px; padding: 5px;"><a  style="color: white;"><span class="glyphicon glyphicon-user" style="color: white;"></span> {{user.userName | uppercase}}</a></button>
       <div class="dropdown-content">
-        <a (click)="profile()" style="color: white;" *ngIf="service.getUserLogged()"><span class="glyphicon glyphicon-pencil" style="color: white;"></span> Profile</a>
+        <!-- <a (click)="profile()" style="color: white;" *ngIf="service.getUserLogged()"><span class="glyphicon glyphicon-pencil" style="color: white;"></span> Profile</a> -->
         <a routerLink="logout" style="color: white;" *ngIf="service.getUserLogged()"><span class="glyphicon glyphicon-log-in" style="color: white;"></span> Logout</a>
       </div>
     </div>
