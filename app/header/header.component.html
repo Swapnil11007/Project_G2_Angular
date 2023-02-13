@@ -17,10 +17,13 @@
           <a class="nav-link active" routerLink="home">Home</a>
         </li>      
         <li class="nav-item">
-          <a class="nav-link"  [class.disabled]="!loginStatus" routerLink="trips" >Trips</a>
+          <a class="nav-link"  [class.disabled]="!loginStatus" routerLink="trips" >Fav Trips</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  [class.disabled]="!loginStatus"  routerLink="trips">My Trips</a>
+          <a class="nav-link"  [class.disabled]="!loginStatus" routerLink="Bookings" >MyBookings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  [class.disabled]="!loginStatus"  routerLink="ticketplacer">Open To Cancellation</a>
         </li>
          
       </ul>
