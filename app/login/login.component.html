@@ -98,7 +98,7 @@
               </tr>
               <br>
               <tr>
-                  <input type="email" name="emailId" class="form-control" [(ngModel)]="user.emailId" required maxlength="15" #emailId="ngModel" placeholder="Enter Your Email">
+                  <input type="email" name="emailId" class="form-control" [(ngModel)]="user.emailId" required maxlength="35" #emailId="ngModel" placeholder="Enter Your Email">
                   <div *ngIf="emailId.errors?.['required']&&emailId.touched">Please Enter Data in emailId field</div>
                   <div *ngIf="emailId.errors?.['maxlength']&&emailId.touched">Maximum length is 15 characters</div>
               </tr>

@@ -8,6 +8,7 @@ declare var jQuery:  any;
   styleUrls: ['./beach.component.css']
 })
 export class BeachComponent implements OnInit {
+ 
   cards: any;
   products: any;
   public carouselPFlag:boolean=true;
@@ -72,6 +73,11 @@ export class BeachComponent implements OnInit {
     this.total = product.beachPrice * this.QTY;
     this.recentExp=product;
     jQuery('#cardModal2').modal('show');
+  }
+
+  addTrip(recentExp:any){
+    alert('Your trips are added go to my trip to see');
+    console.log(recentExp);
   }
 
 }
