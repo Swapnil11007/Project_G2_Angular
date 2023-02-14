@@ -20,12 +20,13 @@ export class AdventureComponent implements OnInit {
   cart: any;
   doj: any;
   doj1: any;
+  doj2: any;
   constructor(private service:PackageService, public userservice:UserserviceService)    
   {
     this.recentExp={};
     this.recentExp1={};
     this.QTY = 0;
-    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " };
+    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " ,description:" "};
     this.imgCollection = [
       {
         image: "assets/Images/adventure/slider1.jpg",
@@ -62,14 +63,19 @@ export class AdventureComponent implements OnInit {
   }
 
   Addtrips(product: any){
-    this.cart={prodName:product.adventureName , emailID:this.userservice.getEmail() , imgPath:product.adventurePath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.adventurePrice)};
+    this.cart={prodName:product.adventureName , emailID:this.userservice.getEmail() , imgPath:product.adventurePath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.adventurePrice), description:product.adventureAbout};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
   }
   Addtrips1(product: any){
-    this.cart={prodName:product.adventureName , emailID:this.userservice.getEmail() , imgPath:product.adventurePath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.adventurePrice1)};
+    this.cart={prodName:product.adventureName , emailID:this.userservice.getEmail() , imgPath:product.adventurePath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.adventurePrice1), description:product.adventureAbout1};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
     
+  }
+  Addtrips2(product: any){
+    this.cart={prodName:product.adventureName , emailID:this.userservice.getEmail() , imgPath:product.adventurePath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.adventurePrice2), description:product.adventureAbout2};
+    this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
+    alert(this.cart.prodName+" Added to Cart");
   }
 }

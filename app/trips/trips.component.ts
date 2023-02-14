@@ -12,7 +12,7 @@ export class TripsComponent implements OnInit{
   trips: any;
   cart:any;
   constructor(protected service: PackageService, private userService: UserserviceService){
-    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " };
+    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " ,description:" " };
   }
 
   ngOnInit(): void {
@@ -29,16 +29,18 @@ export class TripsComponent implements OnInit{
       return t.id === element.id;
     });
     this.trips.splice(i, 1);
+    alert(t.prodName + " package deleted from Fav Trips");
   }
   checkout(product:any){
     
-   this.cart={prodName:product.prodName , emailID:this.userService.getEmail() , imgPath:product.imgPath ,travelDate:product.travelDate, quantity:product.quantity, totalAmount:product.totalAmount}; 
+   this.cart={prodName:product.prodName , emailID:this.userService.getEmail() , imgPath:product.imgPath ,travelDate:product.travelDate, quantity:product.quantity, totalAmount:product.totalAmount ,description:product.description}; 
    this.service.setCheckOut(this.cart).subscribe((data:any)=>{console.log('trip added');});
    this.service.deleteTrip(product.emailID , product.prodName).subscribe((data:any) => {console.log('Trip Deleted');});
     const i = this.trips.findIndex((element: any) => {
       return product.id === element.id;
     });
     this.trips.splice(i, 1);
+    alert(product.prodName + " added to checkout");
   }
 
 }

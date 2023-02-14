@@ -28,11 +28,8 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"logout",canActivate:[AuthGuard], component:LogoutComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
- 
   {path:"ticketplacer",component:TicketplaceholderComponent},
-  {path:"Bookings",component:BookingComponent}
-
-
+  {path:"Bookings",component:BookingComponent},
   {path:"PackageHS",canActivate:[AuthGuard], component:PackageHSComponent},
   {path:"desert",canActivate:[AuthGuard], component:DesertComponent},
   {path:"beach",canActivate:[AuthGuard], component:BeachComponent},
@@ -42,7 +39,6 @@ const routes: Routes = [
   {path:"PackageW",canActivate:[AuthGuard], component:PackageWComponent},
   {path:"Honeymoon",canActivate:[AuthGuard], component:HoneymoonComponent},
   {path:"trips",canActivate:[AuthGuard], component:TripsComponent}
-
 
 
 ];

@@ -10,6 +10,7 @@ body{
 display: inline-block;
 width: 300px;
 height: 350px;
+left: 5px;
 margin: 10px auto;
 /* overflow: auto; */
 /* -moz-box-shadow: #555 0 0 8px;
@@ -22,10 +23,22 @@ box-shadow: #555 0 0 8px; */
 display: inline-block;
 width: 300px;
 height: 350px;
+left: 5px;
 margin: 10px auto;
+
 /* overflow: auto; */
 /* -moz-box-shadow: #555 0 0 8px;
 -webkit-box-shadow: #555 0 0 8px;
 -o-box-shadow: #555 0 0 8px;
 box-shadow: #555 0 0 8px; */
+}
+
+div.relative {
+  position: relative;
+  left: 30px;
+}
+
+div.relative1 {
+  position: relative;
+  left: 5px;
 }

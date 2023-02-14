@@ -6,12 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class PackageService {
 
-  constructor(private httpClient: HttpClient) { 
-    
+  constructor(private httpClient: HttpClient) {     
   }
-  getAllProducts(): any {
-    return this.httpClient.get('/showAllProducts');
-  }
+
   getAllPiligrimage(): any {
     return this.httpClient.get('/showAllPiligrimages');
   }

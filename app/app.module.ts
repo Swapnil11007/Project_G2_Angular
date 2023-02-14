@@ -44,12 +44,6 @@ import { GoogleLoginProvider } from 'angularx-social-login';
 import { TicketplaceholderComponent } from './ticketplaceholder/ticketplaceholder.component';
 import { BookingComponent } from './booking/booking.component';
 
-import { SocialLoginModule } from 'angularx-social-login';
-import { SocialAuthServiceConfig } from 'angularx-social-login';
-import { GoogleLoginProvider } from 'angularx-social-login';
-
-
-
 
 @NgModule({
   declarations: [

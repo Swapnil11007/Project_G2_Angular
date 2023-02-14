@@ -29,7 +29,7 @@ export class DesertComponent implements OnInit {
     this.recentExp1={};
     this.recentExp2={};
     this.QTY = 0;
-    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " };
+    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " ,description:" "};
     this.imgCollection = [
       {
         image: "assets/Images/sliders/dubai.jpg",
@@ -64,18 +64,19 @@ export class DesertComponent implements OnInit {
     jQuery('#cardModal2').modal('show');
   }
   Addtrips(product: any){
-    this.cart={prodName:product.desertName , emailID:this.userservice.getEmail() , imgPath:product.desertPath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.desertPrice)};
+    this.cart={prodName:product.desertName , emailID:this.userservice.getEmail() , imgPath:product.desertPath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.desertPrice), description:product.desertAbout};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
   }
   Addtrips1(product: any){
-    this.cart={prodName:product.desertName , emailID:this.userservice.getEmail() , imgPath:product.desertPath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.desertPrice1)};
+    this.cart={prodName:product.desertName , emailID:this.userservice.getEmail() , imgPath:product.desertPath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.desertPrice1), description:product.desertAbout1};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
     
   }
   Addtrips2(product: any){
-    this.cart={prodName:product.desertName , emailID:this.userservice.getEmail() , imgPath:product.desertPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.desertPrice2)};
+
+    this.cart={prodName:product.desertName , emailID:this.userservice.getEmail() , imgPath:product.desertPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.desertPrice2), description:product.desertAbout2};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
   }

@@ -30,7 +30,7 @@ export class HoneymoonComponent implements OnInit{
     this.recentExp={};
     this.recentExp1={};
     this.recentExp2={};
-    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " };
+    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " ,description:" "};
     this.imgCollection = [
       {
         image: "assets/Images/sliders/honeymoon-slide2.jpg",
@@ -77,18 +77,18 @@ export class HoneymoonComponent implements OnInit{
     jQuery('#cardModal2').modal('show');
   }
   Addtrips(product: any){
-    this.cart={prodName:product.destinationName , emailID:this.userservice.getEmail() , imgPath:product.destinationPath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.destinationPrice)};
+    this.cart={prodName:product.destinationName , emailID:this.userservice.getEmail() , imgPath:product.destinationPath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.destinationPrice), description:product.destinationAbout};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
   }
   Addtrips1(product: any){
-    this.cart={prodName:product.destinationName , emailID:this.userservice.getEmail() , imgPath:product.destinationPath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.destinationPrice1)};
+    this.cart={prodName:product.destinationName , emailID:this.userservice.getEmail() , imgPath:product.destinationPath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.destinationPrice1), description:product.destinationAbout1};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
     
   }
   Addtrips2(product: any){
-    this.cart={prodName:product.destinationName , emailID:this.userservice.getEmail() , imgPath:product.destinationPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.destinationPrice2)};
+    this.cart={prodName:product.destinationName , emailID:this.userservice.getEmail() , imgPath:product.destinationPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.destinationPrice2), description:product.destinationAbout2};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
   }
