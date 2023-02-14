@@ -51,7 +51,7 @@ export class PackageHSComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.service.getAllHillStation().subscribe((data: any) => {this.products = data;});
   }
   carouselHome(ch:boolean){
     this.carouselPFlag=ch;
