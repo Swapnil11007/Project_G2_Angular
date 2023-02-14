@@ -39,7 +39,7 @@ export class HomepageComponent implements OnInit{
         name: 'Jungle-Safari',
         description: 'Explore Indias and Africas best Forest Tourism ',
         imgPath: "../assets/Images/homepage/junglesafari.jpg",
-        route:"../PackageJS"
+        route:"safari"
 
       },
       {
@@ -92,11 +92,6 @@ export class HomepageComponent implements OnInit{
         thumbImage: "assets/Images/sliders/Rajsthan.jpeg",
         title: '',
         alt: 'Image 3'
-      }, {
-        image: "assets/Images/sliders/dubai.jpg",
-        thumbImage: "assets/Images/sliders/dubai.jpg",
-        title: '',
-        alt: 'Image 4'
       }
   ];
   }

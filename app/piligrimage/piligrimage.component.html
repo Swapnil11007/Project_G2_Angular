@@ -10,12 +10,14 @@
         <div class="row">
             <div *ngFor="let card of products" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
             <br/>
-            <div class="card card-hover" title={{card.piligrimageDescription}}>
-                <img class="card-img-top" src={{card.piligrimPath}} alt={{card.piligrimageDescription}} style="width:100%; height: 300px;">
+
+            <div class="card card-hover" title={{card.piligrimDescription}}>
+                <img class="card-img-top" src={{card.piligrimPath}} alt={{card.piligrimDescription}} style="width:100%; height: 300px;">
+ 
     
                 <div class="card-body" style="text-align: center;">
-                    <h2 class="card-title" >{{card.piligrimageName}}</h2>        
-                    <p align="left" >{{card.piligrimageBrief}}</p>
+                    <h2 class="card-title" >{{card.piligrimName}}</h2>        
+                    <p align="left" >{{card.piligrimaBrief}}</p>
                     <div class="btn-group" role="group" aria-label="Basic example">
                         <button mat-button (click)="explore(card)" type="button" class="btn btn-secondary">3N</button>
                         <button mat-button (click)="explore1(card)" type="button" class="btn btn-secondary">5N</button>
@@ -32,17 +34,17 @@
           <!-- Modal content-->
           <div class="modal-content gradient-custom-2" style="color: black; box-shadow: 0 0 1px 1px rgb(255, 255, 255);" >
             <div class="modal-header">
-                <h1 class="modal-title" style="color:black"> {{recentExp.piligrimageName}}</h1>                           
+                <h1 class="modal-title" style="color:black"> {{recentExp.piligrimaName}}</h1>                           
             </div>
             <div class="modal-body" >
                 <h2>Package Description</h2>
-                <p>{{recentExp.piligrimageAbout}}</p>
-                <h3>Rs: {{recentExp.piligrimagePrice}}  / Person only</h3> <br>
+                <p>{{recentExp.piligrimAbout}}</p>
+                <h3>Rs: {{recentExp.piligrimPrice}}  / Person only</h3> <br>
                 
                 <table style="width:100%">
                   <tr>
                     <th>Date of Journey</th>
-                    <td><input type="date" id="DOJ" name="DOJ" class="form-control"></td>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control" [(ngModel)]="doj"></td>
                   </tr>
                   <tr>
                     <th>No. Of Travellers</th>
@@ -50,14 +52,14 @@
                   </tr> 
                   <tr>
                     <th>Total</th>
-                    <td>Rs. {{QTY*recentExp.piligrimagePrice}} /-</td>
+                    <td>Rs. {{QTY*recentExp.piligrimPrice}} /-</td>
                   </tr>
                 </table><br><br>
 
 
 
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-primary"> Add To Trips </button>          
+                <button class="btn btn-primary" (click)="Addtrips(recentExp)"> Add To Trips </button>          
               </div>
           </div>
           
@@ -71,16 +73,16 @@
           <!-- Modal content-->
           <div class="modal-content" style="background-color: rgb(237, 231, 231);color: rgb(56, 23, 23);">
             <div class="modal-header">
-                <h4 class="modal-title" style="color:black"> {{recentExp1.piligrimageName}}</h4>           
+                <h4 class="modal-title" style="color:black"> {{recentExp1.piligrimName}}</h4>           
             </div>
             <div class="modal-body">
                 <h2>Package Description</h2>
-                <p>{{recentExp1.piligrimageAbout1}}</p><br>
-                <h3>Rs: {{recentExp1.piligrimagePrice1}} / Person</h3> <br>
+                <p>{{recentExp1.piligrimAbout1}}</p><br>
+                <h3>Rs: {{recentExp1.piligrimPrice1}} / Person</h3> <br>
                 <table style="width:100%">
                   <tr>
                     <th>Date of Journey</th>
-                    <td><input type="date" id="DOJ" name="DOJ" class="form-control"></td>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control" [(ngModel)]="doj1"></td>
                   </tr>
                   <tr>
                     <th>No. Of Travellers</th>
@@ -88,11 +90,11 @@
                   </tr> 
                   <tr>
                     <th>Total</th>
-                    <td>Rs. {{QTY*recentExp1.piligrimagePrice1}} /-</td>
+                    <td>Rs. {{QTY*recentExp1.piligrimPrice1}} /-</td>
                   </tr>
                 </table><br><br>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-primary">  Add To Trips </button>   
+                <button class="btn btn-primary" (click)="Addtrips1(recentExp1)">  Add To Trips </button>   
               </div>
           </div>
           
@@ -106,16 +108,16 @@
           <!-- Modal content-->
           <div class="modal-content" style="background-color: rgb(237, 231, 231);color: rgb(56, 23, 23);">
             <div class="modal-header">
-                <h4 class="modal-title" style="color:black"> {{recentExp2.piligrimageName}}</h4>                         
+                <h4 class="modal-title" style="color:black"> {{recentExp2.piligrimName}}</h4>                         
             </div>
             <div class="modal-body">
                 <h2>Package Description</h2>
-                <p>{{recentExp2.piligrimageAbout2}}</p><br>
-                <h3>Rs: {{recentExp2.piligrimagePrice2}} / Person</h3> <br>
+                <p>{{recentExp2.piligrimAbout2}}</p><br>
+                <h3>Rs: {{recentExp2.piligrimPrice2}} / Person</h3> <br>
                 <table style="width:100%">
                   <tr>
                     <th>Date of Journey</th>
-                    <td><input type="date" id="DOJ" name="DOJ" class="form-control"></td>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control" [(ngModel)]="doj2"></td>
                   </tr>
                   <tr>
                     <th>No. Of Travellers</th>
@@ -123,11 +125,11 @@
                   </tr> 
                   <tr>
                     <th>Total</th>
-                    <td>Rs. {{QTY*recentExp2.piligrimagePrice2}} /-</td>
+                    <td>Rs. {{QTY*recentExp2.piligrimPrice2}} /-</td>
                   </tr>
                 </table><br><br>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-primary">  Add To Trips </button>   
+                <button class="btn btn-primary" (click)="Addtrips2(recentExp2)">  Add To Trips </button>   
               </div>
           </div>
           

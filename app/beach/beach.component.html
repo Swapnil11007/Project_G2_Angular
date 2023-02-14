@@ -45,7 +45,7 @@
                 <table style="width:100%">
                   <tr>
                     <th>Date of Journey</th>
-                    <td><input type="date" id="DOJ" name="DOJ" class="form-control"></td>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control" [(ngModel)]="doj"  min=mydate></td>
                   </tr>
                   <tr>
                     <th>No. Of Travellers</th>
@@ -53,14 +53,18 @@
                   </tr> 
                   <tr>
                     <th>Total</th>
-                    <td>Rs. {{QTY*recentExp.beachPrice}} /-</td>
+                    <td [(ngModel)]="total">Rs. {{QTY*recentExp.beachPrice}} /-</td>
                   </tr>
                 </table><br><br>
 
 
 
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-primary" (click)="addTrip(recentExp)" data-dismiss="modal"> Add To Trips </button>          
+ 
+                <button class="btn btn-primary" (click)="Addtrips(recentExp)"> Add To Trips </button>          
+ 
+                         
+ 
               </div>
           </div>
           
@@ -83,7 +87,7 @@
                 <table style="width:100%">
                   <tr>
                     <th>Date of Journey</th>
-                    <td><input type="date" id="DOJ" name="DOJ" class="form-control"></td>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control" [(ngModel)]="doj1"></td>
                   </tr>
                   <tr>
                     <th>No. Of Travellers</th>
@@ -95,7 +99,7 @@
                   </tr>
                 </table><br><br>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-primary">  Add To Trips </button>   
+                <button class="btn btn-primary" (click)="Addtrips1(recentExp1)">  Add To Trips </button>   
               </div>
           </div>
           
@@ -118,7 +122,7 @@
                 <table style="width:100%">
                   <tr>
                     <th>Date of Journey</th>
-                    <td><input type="date" id="DOJ" name="DOJ" class="form-control"></td>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control" [(ngModel)]="doj2"></td>
                   </tr>
                   <tr>
                     <th>No. Of Travellers</th>
@@ -130,7 +134,7 @@
                   </tr>
                 </table><br><br>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn-primary">  Add To Trips </button>   
+                <button class="btn btn-primary" (click)="Addtrips2(recentExp2)">  Add To Trips </button>   
               </div>
           </div>
           

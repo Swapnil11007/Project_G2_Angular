@@ -1,1 +1,72 @@
-<p>trips works!</p>
+<head>
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" 
+	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" 
+	crossorigin="anonymous">
+</head>
+<body>
+<!-- <table *ngIf="trips.length" class="table table-bordered table-hover table-striped table-sm text-center" id="print-section">
+    <thead><tr class="bg-info text-white">
+        <th><h4>Package</h4></th>
+        <th><h4>Date of Journey</h4></th>
+        <th><h4>Number of Travellers</h4></th>
+        <th><h4>Total Amount</h4></th>
+        <th><h4>Package Name</h4></th>
+        <th><h4>Ticket PlaceHolder</h4></th>
+        <th><h4>Delete</h4></th>
+    </tr></thead>
+    <tbody><tr *ngFor="let t of trips">
+        <td><img class="card-img-top" src={{t.imgPath}} style="width: 100px; height: 100px;">  </td>
+        <td><h5>{{t.travelDate}}</h5></td>
+        <td><h5>{{t.quantity}}</h5></td>
+        <td><h5>{{t.totalAmount}}</h5></td> 
+        <td><h5>{{t.prodName}}</h5></td>
+        <td><button class="btn btn-success" (click)="placeTrip(t)"><span class="glyphicon glyphicon-share" style="width: 20px ; height: 20px;"></span></button></td>
+        <td><button class="btn btn-danger" (click)="deleteTrip(t)"><span class="glyphicon glyphicon-trash" style="width: 20px ; height: 20px;"></span></button></td>
+    </tr></tbody>
+</table>
+<div align="right"><button class="btn btn-success" printSectionId="print-section" ngxPrint>CHECKOUT</button></div> -->
+<h2 align="center" style="color: #E53A24;">Favourite Packages</h2>
+<form *ngIf="trips.length" id="print-section">
+  <div class="border" *ngFor="let t of trips">
+    <div id="results" style="width: 560px;">
+      <div class="form-group row">
+          <!-- <label for="totalAmount" class="col-sm-2 col-form-label">Description</label> -->
+          <div class="col-sm-10">
+            <!-- <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.imgPath}}"> -->
+            <img src={{t.imgPath}} style="width: 350px;height:350px;">
+          </div>
+        </div>
+    </div>
+  <div id="search" style="width: 560px;">
+  <div class="form-group row">
+      <label for="prodName" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Package</label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.prodName}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="travelDate" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Travel&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.travelDate | date:'dd-MMM-yyyy' }} ">
+      </div>
+    </div>
+    <div class="form-group row"> 
+      <label for="quantity" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Travellers</label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.quantity}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="totalAmount" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Total</label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.totalAmount}}">
+      </div>
+    </div>
+    &nbsp;&nbsp;&nbsp;<button class="btn btn-success" style="width: 100px;" (click)="checkout(t)">CHECKOUT</button>&nbsp;&nbsp;&nbsp;
+<button class="btn btn-danger" style="width: 100px;" (click)="deleteTrip(t)"><span class="glyphicon glyphicon-trash" style="width: 20px ; height: 20px;"></span></button>
+    </div>
+  </div>
+</form>
+<!-- <div align="right"><button class="btn btn-success" printSectionId="print-section" ngxPrint>CHECKOUT</button></div> -->
+</body>

@@ -1,0 +1,42 @@
+
+<body>
+  <h2 align="center" style="color: #E53A24;">My Bookings</h2>
+<form id="print-section">
+  <div class="border" *ngFor="let t of trips">
+    <div id="results" style="width: 560px;">
+      <div class="form-group row">
+          <div class="col-sm-10">
+            <img src={{t.imgPath}} style="width: 350px;height:350px;">
+          </div>
+        </div>
+    </div>
+  <div id="search" style="width: 560px;">
+  <div class="form-group row">
+      <label for="prodName" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Package</label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.prodName}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="travelDate" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Travel&nbsp;Date</label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{ t.travelDate | date:'dd-MMM-yyyy'}} ">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="quantity" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Travellers</label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.quantity}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="totalAmount" class="col-sm-2 col-form-label">&nbsp;&nbsp;&nbsp;&nbsp;Total</label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="{{t.totalAmount}}">
+      </div>
+    </div>
+    &nbsp;&nbsp;&nbsp;<button class="btn btn-success" style="width: 100px;" (click)="placeTrip(t)">CancelTrip</button>&nbsp;&nbsp;&nbsp;
+    </div>
+  </div>
+</form>
+</body>

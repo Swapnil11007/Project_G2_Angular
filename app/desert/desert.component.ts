@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../package.service';
+import { UserserviceService } from '../userservice.service';
 declare var jQuery:  any;
 
 @Component({
@@ -17,13 +18,18 @@ export class DesertComponent implements OnInit {
   recentExp2: any;
   recentExp1: any;
   QTY: any;
+  cart:any;
+  doj: any;
+  doj1: any;
+  doj2: any;
 
-  constructor(private service:PackageService)    
+  constructor(private service:PackageService,public userservice:UserserviceService)    
   {
     this.recentExp={};
     this.recentExp1={};
     this.recentExp2={};
     this.QTY = 0;
+    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " };
     this.imgCollection = [
       {
         image: "assets/Images/sliders/dubai.jpg",
@@ -56,5 +62,21 @@ export class DesertComponent implements OnInit {
   explore2(product: any){
     this.recentExp2=product;
     jQuery('#cardModal2').modal('show');
+  }
+  Addtrips(product: any){
+    this.cart={prodName:product.desertName , emailID:this.userservice.getEmail() , imgPath:product.desertPath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.desertPrice)};
+    this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
+    alert(this.cart.prodName+" Added to Cart");
+  }
+  Addtrips1(product: any){
+    this.cart={prodName:product.desertName , emailID:this.userservice.getEmail() , imgPath:product.desertPath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.desertPrice1)};
+    this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
+    alert(this.cart.prodName+" Added to Cart");
+    
+  }
+  Addtrips2(product: any){
+    this.cart={prodName:product.desertName , emailID:this.userservice.getEmail() , imgPath:product.desertPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.desertPrice2)};
+    this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
+    alert(this.cart.prodName+" Added to Cart");
   }
 }

@@ -17,6 +17,9 @@ import { PackageWComponent } from './package-w/package-w.component';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
 import { TripsComponent } from './trips/trips.component';
+import { PackageJSComponent } from './package-js/package-js.component';
+import { TicketplaceholderComponent } from './ticketplaceholder/ticketplaceholder.component';
+import { BookingComponent } from './booking/booking.component';
 
 
 const routes: Routes = [
@@ -25,6 +28,11 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"logout",canActivate:[AuthGuard], component:LogoutComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
+ 
+  {path:"ticketplacer",component:TicketplaceholderComponent},
+  {path:"Bookings",component:BookingComponent}
+
+
   {path:"PackageHS",canActivate:[AuthGuard], component:PackageHSComponent},
   {path:"desert",canActivate:[AuthGuard], component:DesertComponent},
   {path:"beach",canActivate:[AuthGuard], component:BeachComponent},
@@ -34,6 +42,7 @@ const routes: Routes = [
   {path:"PackageW",canActivate:[AuthGuard], component:PackageWComponent},
   {path:"Honeymoon",canActivate:[AuthGuard], component:HoneymoonComponent},
   {path:"trips",canActivate:[AuthGuard], component:TripsComponent}
+
 
 
 ];

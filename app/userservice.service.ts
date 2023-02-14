@@ -27,8 +27,8 @@ export class UserserviceService {
     this.isUserLogged = true;
     this.loginStatus.next(this.isUserLogged);
     this.User1.next(this.User);
-    console.log("user1" );
-    console.log(this.User1 );
+    //console.log("user1" );
+    //console.log(this.User1 );
    }
 
    setUserLoggedOut(){
@@ -51,6 +51,10 @@ export class UserserviceService {
 
   getUser1(): any{
     return this.User1.asObservable();
+  }
+
+  getEmail(): any{
+    return this.User.emailId;
   }
 
   // UserAuthService

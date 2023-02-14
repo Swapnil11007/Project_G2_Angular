@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PackageService } from '../package.service';
+import { UserserviceService } from '../userservice.service';
 declare var jQuery:  any;
 
 @Component({
@@ -12,6 +13,7 @@ export class BeachComponent implements OnInit {
   cards: any;
   products: any;
   public carouselPFlag:boolean=true;
+  cart: any;
 
   imgCollection: { image: string; thumbImage: string; alt: string; title: string; }[];
   recentExp: any;
@@ -19,13 +21,21 @@ export class BeachComponent implements OnInit {
   recentExp1: any;
   QTY: any;
   total: any;
-
-  constructor(public service:PackageService)    
+  doj:any;
+  user: any;
+  doj1: any;
+  doj2: any;
+  mydate: any;
+  constructor(public service:PackageService , public userservice:UserserviceService)    
   {
     this.recentExp={};
     this.recentExp1={};
     this.recentExp2={};
+    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " };
+
     this.QTY = 0;
+    this.mydate=new Date();
+    console.log(this.mydate);
 
     this.imgCollection = [
       {
@@ -41,11 +51,18 @@ export class BeachComponent implements OnInit {
       }
 
     ]; 
+
   }
 
 
   ngOnInit(): void {
+    this.userservice.getUser1().subscribe((data1: any) => {
+      this.user = data1;
+      console.log("data1 inside beach : ")
+      console.log(data1);
+    });
     this.service.getAllBeach().subscribe((data: any) => {this.products = data;});
+
   }
   carouselHome(ch:boolean){
     this.carouselPFlag=ch;
@@ -53,26 +70,31 @@ export class BeachComponent implements OnInit {
   explore(product: any){
     this.recentExp=product;
     jQuery('#cardModal').modal('show');
-    this.total = product.beachPrice * this.QTY;
-    this.recentExp=product;
-    jQuery('#cardModal').modal('show');
   }
 
   explore1(product: any){
     this.recentExp1=product;
     jQuery('#cardModal1').modal('show');
-    this.total = product.beachPrice * this.QTY;
-    this.recentExp=product;
-    jQuery('#cardModal1').modal('show');
   }
- 
-
   explore2(product: any){
     this.recentExp2=product;
     jQuery('#cardModal2').modal('show');
-    this.total = product.beachPrice * this.QTY;
-    this.recentExp=product;
-    jQuery('#cardModal2').modal('show');
+  }
+  Addtrips(product: any){
+    this.cart={prodName:product.beachName , emailID:this.userservice.getEmail() , imgPath:product.beachPath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.beachPrice)};
+    this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
+    alert(this.cart.prodName+" Added to Cart");
+  }
+  Addtrips1(product: any){
+    this.cart={prodName:product.beachName , emailID:this.userservice.getEmail() , imgPath:product.beachPath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.beachPrice1)};
+    this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
+    alert(this.cart.prodName+" Added to Cart");
+    
+  }
+  Addtrips2(product: any){
+    this.cart={prodName:product.beachName , emailID:this.userservice.getEmail() , imgPath:product.beachPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.beachPrice2)};
+    this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
+    alert(this.cart.prodName+" Added to Cart");
   }
 
   addTrip(recentExp:any){
