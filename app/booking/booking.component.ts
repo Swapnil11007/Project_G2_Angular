@@ -12,7 +12,7 @@ export class BookingComponent implements OnInit{
   trips: any;
   cart:any;
   constructor(protected service: PackageService, private userService: UserserviceService){
-    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " };
+    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " ,description:" " };
   }
 
   ngOnInit(): void {
@@ -24,7 +24,12 @@ export class BookingComponent implements OnInit{
 
   placeTrip(product:any){
 
-    this.cart={prodName:product.prodName , emailID:this.userService.getEmail() , imgPath:product.imgPath ,travelDate:product.travelDate, quantity:product.quantity, totalAmount:product.totalAmount};
+    this.cart={prodName:product.prodName , emailID:this.userService.getEmail() , imgPath:product.imgPath ,travelDate:product.travelDate, quantity:product.quantity, totalAmount:product.totalAmount ,description:product.description}; 
+    this.service.setPlaceHolder(this.cart).subscribe((data:any)=>{console.log('trip added');});
+    alert(product.prodName + " Opted for Cancellation");
+  }
+  print(product:any){
+    this.cart={prodName:product.prodName , emailID:this.userService.getEmail() , imgPath:product.imgPath ,travelDate:product.travelDate, quantity:product.quantity, totalAmount:product.totalAmount,description:product.description};
     this.service.setPlaceHolder(this.cart).subscribe((data:any)=>{console.log('trip added');});
 
   }

@@ -28,19 +28,17 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"logout",canActivate:[AuthGuard], component:LogoutComponent},
   {path:"forgotPassword",component:ForgotPasswordComponent},
-  {path:"PackageHS",component:PackageHSComponent},
-  {path:"desert",component:DesertComponent},
-  {path:"safari",component:PackageJSComponent},
-  {path:"beach",component:BeachComponent},
-  {path:"snow",component:SnowsitesComponent},
-  {path:"adventure",component:AdventureComponent},
-  {path:"piligrimage",component:PiligrimageComponent},
-  {path:"PackageW",component:PackageWComponent},
-  {path:"Honeymoon",component:HoneymoonComponent},
-  {path:"trips",component:TripsComponent},
   {path:"ticketplacer",component:TicketplaceholderComponent},
-  {path:"Bookings",component:BookingComponent}
-
+  {path:"Bookings",component:BookingComponent},
+  {path:"PackageHS",canActivate:[AuthGuard], component:PackageHSComponent},
+  {path:"desert",canActivate:[AuthGuard], component:DesertComponent},
+  {path:"beach",canActivate:[AuthGuard], component:BeachComponent},
+  {path:"snow",canActivate:[AuthGuard], component:SnowsitesComponent},
+  {path:"adventure",canActivate:[AuthGuard], component:AdventureComponent},
+  {path:"piligrimage",canActivate:[AuthGuard], component:PiligrimageComponent},
+  {path:"PackageW",canActivate:[AuthGuard], component:PackageWComponent},
+  {path:"Honeymoon",canActivate:[AuthGuard], component:HoneymoonComponent},
+  {path:"trips",canActivate:[AuthGuard], component:TripsComponent}
 
 
 ];

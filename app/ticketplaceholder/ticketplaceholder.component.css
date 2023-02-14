@@ -1,12 +1,46 @@
 body{
+
     position: relative;
     margin-top: 150px;
     margin-right: 50px;
     margin-left: 50px;
+
 }
 
 
 #search {
+
+display: inline-block;
+width: 300px;
+height: 350px;
+left: 5px;
+/* overflow: auto; */
+/* -moz-box-shadow: #555 0 0 8px;
+-webkit-box-shadow: #555 0 0 8px;
+-o-box-shadow: #555 0 0 8px;
+box-shadow: #555 0 0 8px; */
+}
+
+#results {
+display: inline-block;
+width: 300px;
+height: 350px;
+left: 5px;
+/* overflow: auto; */
+/* -moz-box-shadow: #555 0 0 8px;
+-webkit-box-shadow: #555 0 0 8px;
+-o-box-shadow: #555 0 0 8px;
+box-shadow: #555 0 0 8px; */
+}
+
+div.relative {
+  position: relative;
+  left: 30px;
+}
+
+div.relative1 {
+  position: relative;
+  left: 5px;
   display: inline-block;
   width: 300px;
   height: 350px;
@@ -28,4 +62,5 @@ body{
   -webkit-box-shadow: #555 0 0 8px;
   -o-box-shadow: #555 0 0 8px;
   box-shadow: #555 0 0 8px; */
+
 }

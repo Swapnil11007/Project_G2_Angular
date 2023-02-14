@@ -9,6 +9,7 @@ declare var jQuery:  any;
   styleUrls: ['./beach.component.css']
 })
 export class BeachComponent implements OnInit {
+ 
   cards: any;
   products: any;
   public carouselPFlag:boolean=true;
@@ -30,7 +31,7 @@ export class BeachComponent implements OnInit {
     this.recentExp={};
     this.recentExp1={};
     this.recentExp2={};
-    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " };
+    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " ,description:" "};
 
     this.QTY = 0;
     this.mydate=new Date();
@@ -80,20 +81,25 @@ export class BeachComponent implements OnInit {
     jQuery('#cardModal2').modal('show');
   }
   Addtrips(product: any){
-    this.cart={prodName:product.beachName , emailID:this.userservice.getEmail() , imgPath:product.beachPath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.beachPrice)};
+    this.cart={prodName:product.beachName , emailID:this.userservice.getEmail() , imgPath:product.beachPath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.beachPrice), description:product.beachAbout};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
   }
   Addtrips1(product: any){
-    this.cart={prodName:product.beachName , emailID:this.userservice.getEmail() , imgPath:product.beachPath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.beachPrice1)};
+    this.cart={prodName:product.beachName , emailID:this.userservice.getEmail() , imgPath:product.beachPath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.beachPrice1), description:product.beachAbout1};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
     
   }
   Addtrips2(product: any){
-    this.cart={prodName:product.beachName , emailID:this.userservice.getEmail() , imgPath:product.beachPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.beachPrice2)};
+    this.cart={prodName:product.beachName , emailID:this.userservice.getEmail() , imgPath:product.beachPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.beachPrice2), description:product.beachAbout2};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
+  }
+
+  addTrip(recentExp:any){
+    alert('Your trips are added go to my trip to see');
+    console.log(recentExp);
   }
 
 }

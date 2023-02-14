@@ -29,7 +29,8 @@ export class PiligrimageComponent implements OnInit {
     this.recentExp1={};
     this.recentExp2={};
     this.QTY = 0;
-    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " };
+
+    this.cart={prodName:" " , emailID:" " , imgPath:" " ,travelDate:" ", quantity:" ", totalAmount:" " ,description:" "};
     this.imgCollection = [
       {
         image: "assets/Images/sliders/Amarnath.jpg",
@@ -69,18 +70,25 @@ export class PiligrimageComponent implements OnInit {
     jQuery('#cardModal2').modal('show');
   }
   Addtrips(product: any){
-    this.cart={prodName:product.piligrimName , emailID:this.userservice.getEmail() , imgPath:product.piligrimPath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.piligrimPrice)};
+
+    this.cart={prodName:product.piligrimName , emailID:this.userservice.getEmail() , imgPath:product.piligrimPath ,travelDate:this.doj, quantity:this.QTY, totalAmount:(this.QTY*product.piligrimPrice), description:product.piligrimAbout};
+
+
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
   }
   Addtrips1(product: any){
-    this.cart={prodName:product.piligrimName , emailID:this.userservice.getEmail() , imgPath:product.piligrimPath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.piligrimPrice1)};
+
+    this.cart={prodName:product.piligrimName , emailID:this.userservice.getEmail() , imgPath:product.piligrimPath ,travelDate:this.doj1, quantity:this.QTY, totalAmount:(this.QTY*product.piligrimPrice1), description:product.piligrimAbout1};
+
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
     
   }
   Addtrips2(product: any){
-    this.cart={prodName:product.piligrimName , emailID:this.userservice.getEmail() , imgPath:product.piligrimPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.piligrimPrice2)};
+
+    this.cart={prodName:product.piligrimName , emailID:this.userservice.getEmail() , imgPath:product.piligrimPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.piligrimPrice2), description:product.piligrimAbout2};
+
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
   }
