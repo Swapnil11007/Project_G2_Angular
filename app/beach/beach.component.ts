@@ -9,6 +9,7 @@ declare var jQuery:  any;
   styleUrls: ['./beach.component.css']
 })
 export class BeachComponent implements OnInit {
+ 
   cards: any;
   products: any;
   public carouselPFlag:boolean=true;
@@ -94,6 +95,11 @@ export class BeachComponent implements OnInit {
     this.cart={prodName:product.beachName , emailID:this.userservice.getEmail() , imgPath:product.beachPath ,travelDate:this.doj2, quantity:this.QTY, totalAmount:(this.QTY*product.beachPrice2)};
     this.service.setDashboard(this.cart).subscribe((data:any)=>{console.log('trip added');});
     alert(this.cart.prodName+" Added to Cart");
+  }
+
+  addTrip(recentExp:any){
+    alert('Your trips are added go to my trip to see');
+    console.log(recentExp);
   }
 
 }
