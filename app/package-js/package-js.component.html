@@ -1,4 +1,3 @@
-<p>package-js works!</p>
 <body>
     <div style="width: 100%; height: 360px; text-align:center;margin:0; padding:0;">
         <ng-image-slider [images]="imgCollection" #nav [infinite]="true"
@@ -11,16 +10,126 @@
         <div class="row">
             <div *ngFor="let card of products" class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-6 ">
             <br/>
-            <div class="card card-hover" >
+            <div class="card card-hover" title={{card.safariDescription}}>
                 <img class="card-img-top" src={{card.safariPath}} alt={{card.safariDescription}} style="width:100%; height: 300px;">
     
                 <div class="card-body" style="text-align: center;">
-                    <h3 class="card-title" title={{card.safariDescription}}>{{card.safariName}}</h3>        
-                    <p align="right"> 
-                    <button class="btn btn-primary" (click)='explore(card)'> Explore </button>
-                    </p>
+                    <h3 class="card-title" >{{card.safariName}}</h3>        
+                    <p align="left" >{{card.safariBrief}}</p>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button mat-button (click)="explore(card)" type="button" class="btn btn-secondary">3N</button>
+                        <button mat-button (click)="explore1(card)" type="button" class="btn btn-secondary">5N</button>
+                        <button mat-button (click)="explore2(card)" type="button" class="btn btn-secondary">7N</button>
+                      </div>
                 </div>
             </div>
             </div>
         </div>
-    </div></body>
+    </div>
+    <div class="modal fade" id="cardModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content gradient-custom-2" style="color: black; box-shadow: 0 0 1px 1px rgb(255, 255, 255);" >
+            <div class="modal-header">
+                <h2 class="modal-title" style="color:black"> {{recentExp.safariName}}</h2>                           
+            </div>
+            <div class="modal-body" >
+                <h2>Package Description</h2>
+                <p>{{recentExp.safariAbout}}</p>
+                <h3>Rs: {{recentExp.safariPrice}}  / Person only</h3> <br>
+                
+                <table style="width:100%">
+                  <tr>
+                    <th>Date of Journey</th>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control" [(ngModel)]="doj"></td>
+                  </tr>
+                  <tr>
+                    <th>No. Of Travellers</th>
+                    <td><input type="number" id="QTY" name="QTY" class="form-control" [(ngModel)]="QTY" min="0"  max="15"></td>
+                  </tr> 
+                  <tr>
+                    <th>Total</th>
+                    <td>Rs. {{QTY*recentExp.safariPrice}} /-</td>
+                  </tr>
+                </table><br><br>
+
+
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary" (click)="Addtrips(recentExp)"> Add To Trips </button>          
+              </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="cardModal1" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content" style="background-color: rgb(237, 231, 231);color: rgb(56, 23, 23);">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:black"> {{recentExp1.safariName}}</h4>           
+            </div>
+            <div class="modal-body">
+                <h2>Package Description</h2>
+                <p>{{recentExp1.safariAbout1}}</p><br>
+                <h3>Rs: {{recentExp1.safariPrice1}} / Person</h3> <br>
+                <table style="width:100%">
+                  <tr>
+                    <th>Date of Journey</th>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control" [(ngModel)]="doj1"></td>
+                  </tr>
+                  <tr>
+                    <th>No. Of Travellers</th>
+                    <td><input type="number" id="QTY" name="QTY" class="form-control" [(ngModel)]="QTY" min="0"  max="15"></td>
+                  </tr> 
+                  <tr>
+                    <th>Total</th>
+                    <td>Rs. {{QTY*recentExp1.safariPrice1}} /-</td>
+                  </tr>
+                </table><br><br>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary" (click)="Addtrips1(recentExp1)">  Add To Trips </button>   
+              </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <div class="modal fade" id="cardModal2" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content" style="background-color: rgb(237, 231, 231);color: rgb(56, 23, 23);">
+            <div class="modal-header">
+                <h4 class="modal-title" style="color:black"> {{recentExp2.safariName}}</h4>                         
+            </div>
+            <div class="modal-body">
+                <h2>Package Description</h2>
+                <p>{{recentExp2.safariAbout2}}</p><br>
+                <h3>Rs: {{recentExp2.safariPrice2}} / Person</h3> <br>
+                <table style="width:100%">
+                  <tr>
+                    <th>Date of Journey</th>
+                    <td><input type="date" id="DOJ" name="DOJ" class="form-control" [(ngModel)]="doj2"></td>
+                  </tr>
+                  <tr>
+                    <th>No. Of Travellers</th>
+                    <td><input type="number" id="QTY" name="QTY" class="form-control" [(ngModel)]="QTY" min="0"  max="15"></td>
+                  </tr> 
+                  <tr>
+                    <th>Total</th>
+                    <td>Rs. {{QTY*recentExp2.safariPrice2}} /-</td>
+                  </tr>
+                </table><br><br>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btn btn-primary" (click)="Addtrips2(recentExp2)">  Add To Trips </button>   
+              </div>
+          </div>
+          
+        </div>
+      </div>

@@ -17,6 +17,9 @@ import { PackageWComponent } from './package-w/package-w.component';
 import { AuthGuard } from './auth.guard';
 import { LogoutComponent } from './logout/logout.component';
 import { TripsComponent } from './trips/trips.component';
+import { PackageJSComponent } from './package-js/package-js.component';
+import { TicketplaceholderComponent } from './ticketplaceholder/ticketplaceholder.component';
+import { BookingComponent } from './booking/booking.component';
 
 
 const routes: Routes = [
@@ -27,14 +30,16 @@ const routes: Routes = [
   {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"PackageHS",component:PackageHSComponent},
   {path:"desert",component:DesertComponent},
+  {path:"safari",component:PackageJSComponent},
   {path:"beach",component:BeachComponent},
   {path:"snow",component:SnowsitesComponent},
   {path:"adventure",component:AdventureComponent},
   {path:"piligrimage",component:PiligrimageComponent},
   {path:"PackageW",component:PackageWComponent},
   {path:"Honeymoon",component:HoneymoonComponent},
-  {path:"trips",component:TripsComponent}
-
+  {path:"trips",component:TripsComponent},
+  {path:"ticketplacer",component:TicketplaceholderComponent},
+  {path:"Bookings",component:BookingComponent}
 
 ];
 

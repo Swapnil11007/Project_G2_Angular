@@ -36,6 +36,8 @@ import { PackageJSComponent } from './package-js/package-js.component';
 import { NgxPrintModule } from 'ngx-print';
 
 import { LogoutComponent } from './logout/logout.component';
+import { TicketplaceholderComponent } from './ticketplaceholder/ticketplaceholder.component';
+import { BookingComponent } from './booking/booking.component';
 
 
 
@@ -60,6 +62,8 @@ import { LogoutComponent } from './logout/logout.component';
     HoneymoonComponent,
     PackageJSComponent,
     LogoutComponent,
+    TicketplaceholderComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
